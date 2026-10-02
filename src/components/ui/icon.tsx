@@ -37,7 +37,9 @@ export type IconName =
   | "compass"
   | "shield"
   | "chat"
-  | "eye";
+  | "eye"
+  | "play"
+  | "pause";
 
 const strokePaths: Partial<Record<IconName, React.ReactNode>> = {
   menu: <path d="M4 6h16M4 12h16M4 18h16" />,
@@ -172,6 +174,8 @@ const strokePaths: Partial<Record<IconName, React.ReactNode>> = {
       <circle cx="12" cy="12" r="3" />
     </>
   ),
+  play: <path d="m8 5 12 7-12 7z" />,
+  pause: <path d="M8 5h3v14H8zM15 5h3v14h-3z" />,
 };
 
 const fillPaths: Partial<Record<IconName, React.ReactNode>> = {
