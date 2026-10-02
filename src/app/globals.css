@@ -1,0 +1,308 @@
+@import "tailwindcss";
+
+/* Dark mode berbasis class pada <html> (dikelola next-themes) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+
+  /* Token semantik yang berotasi otomatis antara mode terang & gelap */
+  --color-surface: var(--surface);
+  --color-tint: var(--tint);
+  --color-line: var(--line);
+  --color-body: var(--body);
+  --color-heading: var(--heading);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+}
+
+/* Mode terang (default) — kontras ≥ 4.5:1 untuk teks di atas surface */
+:root {
+  --surface: #ffffff;
+  --tint: #f1f6fe;
+  --line: #e0eafc;
+  --body: #40506b;
+  --heading: #101c33;
+  --muted: #5d6b84;
+  --accent: #1a4197;
+}
+
+/* Mode gelap — dasar hampir hitam dengan sentuhan navy sangat halus,
+   namun aksen biru asli sekolah tetap dipertahankan (topbar/footer navy,
+   tombol & tautan biru vivid). Kontras di atas surface #0a0e16:
+   body ≈ 10:1 · muted ≈ 7.4:1 · heading ≈ 16:1 · accent ≈ 6:1 */
+.dark {
+  --surface: #0a0e16;
+  --tint: #101826;
+  --line: #202c42;
+  --body: #b3c0d4;
+  --heading: #f2f5fa;
+  --muted: #94a3bd;
+  --accent: #5c90e2;
+}
+
+@theme {
+  /* ── Warna utama: biru laut Barru ─────────────────────────── */
+  --color-brand-50: #f1f6fe;
+  --color-brand-100: #e0eafc;
+  --color-brand-200: #c2d7f8;
+  --color-brand-300: #92baef;
+  --color-brand-400: #5c90e2;
+  --color-brand-500: #3569d3;
+  --color-brand-600: #2050b9;
+  --color-brand-700: #1a4197;
+  --color-brand-800: #163775;
+  --color-brand-900: #122a55;
+  --color-brand-950: #0b1c3d;
+
+  /* ── Aksen gold: layar & bintang sekolah (dipakai hemat) ──── */
+  --color-gold-100: #fdf3e0;
+  --color-gold-200: #fae3b8;
+  --color-gold-300: #f5cd87;
+  --color-gold-400: #efb45a;
+  --color-gold-500: #e39c30;
+  --color-gold-600: #c07c1e;
+
+  /* ── Tinta teks ────────────────────────────────────────────── */
+  /* ink-400 dirancang ≥ 4.5:1 di atas putih agar kontras teks kecil aman */
+  --color-ink-400: #64748f;
+  --color-ink-500: #5d6b84;
+  --color-ink-600: #40506b;
+  --color-ink-700: #2b3a55;
+  --color-ink-800: #1a2842;
+  --color-ink-900: #101c33;
+
+  --animate-marquee: marquee 45s linear infinite;
+  --animate-fade-up: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-fade-in: fade-in 0.4s ease both;
+  --animate-scale-in: scale-in 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-page-in: page-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-ken-burns: ken-burns 9s cubic-bezier(0.25, 0.6, 0.35, 1) both;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  /* transisi masuk antar halaman (diakhiri tanpa transform agar tidak
+   menyisakan layer komposit yang memicu artefak garis saat scroll) */
+  @keyframes page-in {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  /* efek zoom perlahan untuk foto hero aktif */
+  @keyframes ken-burns {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.08);
+    }
+  }
+  /* bilah progres autoplay carousel galeri */
+  --animate-carousel-progress: carousel-progress linear both;
+
+  @keyframes carousel-progress {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  /* kilau skeleton loading gambar */
+  --animate-shimmer: shimmer 1.8s linear infinite;
+
+  @keyframes shimmer {
+    from {
+      background-position: 200% 0;
+    }
+    to {
+      background-position: -200% 0;
+    }
+  }
+
+  /* apung lembut untuk elemen dekoratif (mis. kapal pinisi di 404) */
+  --animate-float: float 5s ease-in-out infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+}
+
+/* Cegah elemen dekoratif (slide samping carousel, marquee, dsb.) memperlebar
+   dokumen. Gunakan `clip` — bukan `hidden` — agar position: sticky & fixed
+   tetap berfungsi normal. */
+html,
+body {
+  overflow-x: clip;
+}
+
+/* Transisi tema via View Transition API: lingkaran memancar dari tombol toggle.
+   Matikan animasi crossfade bawaan agar hanya efek clip-path dari JS yang
+   berjalan (jika API tak didukung, pergantian tema tetap normal). */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* Peta Leaflet: senada dengan tema — sedikit redup di mode gelap. */
+.dark .leaflet-tile-pane {
+  filter: brightness(0.72) saturate(0.75) contrast(1.05);
+}
+.dark .leaflet-container {
+  background: #0a0e16;
+}
+.leaflet-container {
+  font-family: inherit;
+}
+
+/* Mode cetak: sembunyikan kerangka aplikasi agar halaman PPDB/unduhan/form
+   bisa dicetak bersih oleh orang tua. */
+@media print {
+  header,
+  footer,
+  nav,
+  aside,
+  [role="dialog"] {
+    display: none !important;
+  }
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+  section {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+  a {
+    text-decoration: underline;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  /* jaga agar anchor tidak tertutup header sticky */
+  scroll-padding-top: 6rem;
+}
+
+body {
+  @apply bg-surface font-sans text-body antialiased;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+::selection {
+  @apply bg-brand-600 text-white;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer components {
+  /* Label kecil di atas judul section, diawali garis layar pinisi. */
+  .eyebrow {
+    @apply inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.22em] text-accent;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply block h-[2px] w-7 rounded-full bg-gold-500;
+  }
+
+  /* Pola titik halus untuk band berlatar navy. */
+  .pattern-dots {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  .pattern-dots-dark {
+    background-image: radial-gradient(rgba(11, 28, 61, 0.08) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+
+  /* Scroll-reveal: elemen [data-reveal] muncul halus saat masuk viewport.
+     Diaktifkan oleh <ScrollReveal /> (menambah atribut data-revealed). */
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(26px);
+    transition:
+      opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: calc(var(--reveal-order, 0) * 90ms);
+  }
+  [data-reveal][data-revealed] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
