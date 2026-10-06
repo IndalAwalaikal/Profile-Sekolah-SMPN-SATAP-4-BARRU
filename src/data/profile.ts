@@ -525,11 +525,25 @@ export const schoolStats = [
 /** Sarana dan Prasarana Sekolah sesuai KSP UPTD SMPN SATAP 4 BARRU. */
 export const facilities = [
   {
+    name: "UKS",
+    slug: "uks",
+    description:
+      "Unit Kesehatan Sekolah sebagai sarana pelayanan kesehatan dasar, pembiasaan hidup bersih dan sehat, serta pertolongan pertama bagi peserta didik.",
+    image:
+      "https://res.cloudinary.com/dmualsp81/image/upload/v1791292854/9a4b269f-8ede-4150-9a55-441149188166.png",
+    details: [
+      "Pertolongan pertama bagi warga sekolah",
+      "Pembiasaan perilaku hidup bersih dan sehat",
+      "Dukungan kegiatan kesehatan peserta didik",
+    ],
+  },
+  {
     name: "Laboratorium Komputer",
     slug: "lab-komputer",
     description:
       "Fasilitas laboratorium komputer terkoneksi internet untuk mendukung program unggulan pembelajaran berbasis teknologi, bimbingan TIK, literasi digital, dan pelaksanaan Asesmen Nasional (ANBK).",
-    image: "/images/berita-2.jpg",
+    image:
+      "https://res.cloudinary.com/dmualsp81/image/upload/v1791293396/85b98b5a-1521-437f-8c8b-df30e8c053f2.png",
     details: [
       "Perangkat komputer dan konektivitas internet",
       "Pusat pembelajaran berbasis teknologi dan informatika",
@@ -541,7 +555,8 @@ export const facilities = [
     slug: "lab-ipa",
     description:
       "Laboratorium IPA yang dilengkapi alat peraga biologi dan fisika, mikroskop, serta kit praktikum sains terpadu yang mendorong nalar kritis dan rasa ingin tahu siswa.",
-    image: "/images/berita-1.jpg",
+    image:
+      "https://res.cloudinary.com/dmualsp81/image/upload/v1791293066/745bdaae-e677-443d-869b-749ffd4927ab.png",
     details: [
       "Meja praktikum dan alat peraga kurikulum merdeka",
       "Peralatan mikroskop dan kit percobaan sains dasar",
@@ -553,7 +568,8 @@ export const facilities = [
     slug: "perpustakaan",
     description:
       "Pusat sumber belajar dengan koleksi buku teks pelajaran Kurikulum Merdeka, buku pengayaan, ensiklopedia, dan pojok baca harian 15 menit untuk memacu literasi membaca.",
-    image: "/images/berita-3.jpg",
+    image:
+      "https://res.cloudinary.com/dmualsp81/image/upload/v1791293487/ebe97e33-f269-4ca3-adeb-4437053d62bf.png",
     details: [
       "Koleksi buku teks wajib dan buku pengayaan sastra",
       "Program 15 menit membaca sebelum jam pertama",
@@ -565,7 +581,8 @@ export const facilities = [
     slug: "lapangan-olahraga",
     description:
       "Lapangan olahraga terpadu untuk latihan futsal, bola voli, sepak takraw, atletik, dan upacara bendera mingguan yang mendukung bakat fisik siswa dalam ajang Gala Siswa.",
-    image: "/images/berita-4.jpg",
+    image:
+      "https://res.cloudinary.com/dmualsp81/image/upload/v1790949942/6c9a43ef-4ac8-4df0-8a8a-f705d2bcc851.png",
     details: [
       "Lapangan multifungsi: voli, futsal, dan upacara bendera",
       "Arena latihan tim Gala Siswa tingkat kecamatan",
@@ -573,35 +590,12 @@ export const facilities = [
     ],
   },
   {
-    name: "Halaman Sekolah yang Luas",
-    slug: "halaman-sekolah",
-    description:
-      "Halaman sekolah yang sangat luas, terbuka, dan rindang dengan latar panorama pegunungan dan persawahan Desa Anabanua. Menjadi tempat ideal untuk kegiatan kepramukaan, perkemahan, dan senam bersama.",
-    image: "/images/profil-sekolah.jpg",
-    details: [
-      "Area terbuka hijau berlatar pemandangan alam perbukitan",
-      "Lokasi perkemahan pramuka dan kegiatan outdoor siswa",
-      "Panggung kreasi terbuka untuk festival seni budaya",
-    ],
-  },
-  {
-    name: "Musholla & Sarana Keagamaan",
-    slug: "musholla",
-    description:
-      "Fasilitas ibadah musholla sekolah yang menjadi pusat pembiasaan religius seluruh siswa: shalat berjamaah di akhir jam pelajaran, pembiasaan Baca Tulis Al-Qur'an (BTQ), dan perayaan PHBI.",
-    image: "/images/berita-5.jpg",
-    details: [
-      "Tempat shalat berjamaah harian warga sekolah",
-      "Pusat pembiasaan Baca Tulis Al-Qur'an (BTQ)",
-      "Sarana peringatan Maulid Nabi dan Isra Mi'raj",
-    ],
-  },
-  {
     name: "Lingkungan Alam Sumber Belajar",
     slug: "lingkungan-alam",
     description:
       "Keasrian alam persawahan dan perbukitan sekitar Dusun Banga-banga yang dimanfaatkan guru sebagai laboratorium alam terbuka untuk pengamatan ekosistem, pertanian, dan proyek gaya hidup berkelanjutan P5.",
-    image: "/images/berita-6.jpg",
+    image:
+      "https://res.cloudinary.com/dmualsp81/image/upload/v1791293611/8c8c6385-dc5e-4896-9b7a-350c592e9877.png",
     details: [
       "Persawahan dan kebun warga sebagai media kontekstual",
       "Pengamatan flora, fauna, dan tanah perbukitan",

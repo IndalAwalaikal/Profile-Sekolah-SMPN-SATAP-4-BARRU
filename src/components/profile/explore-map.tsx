@@ -8,12 +8,11 @@ import { ShimmerImage } from "@/components/ui/shimmer-image";
 
 /** Posisi dekoratif tiap fasilitas pada denah (persentase). */
 const POSITIONS: Record<string, { x: number; y: number }> = {
+  uks: { x: 18, y: 72 },
   "lab-komputer": { x: 22, y: 30 },
   "lab-ipa": { x: 50, y: 22 },
   perpustakaan: { x: 78, y: 30 },
   "lapangan-olahraga": { x: 50, y: 55 },
-  "halaman-sekolah": { x: 50, y: 80 },
-  musholla: { x: 18, y: 72 },
   "lingkungan-alam": { x: 82, y: 72 },
 };
 

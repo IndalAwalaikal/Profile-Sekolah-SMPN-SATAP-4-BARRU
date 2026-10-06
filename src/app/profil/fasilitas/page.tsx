@@ -9,7 +9,7 @@ import { ExploreMap } from "@/components/profile/explore-map";
 export const metadata: Metadata = {
   title: "Sarana dan Prasarana",
   description:
-    "Sarana dan prasarana UPTD SMPN SATAP 4 BARRU: Laboratorium Komputer, Lab IPA, Perpustakaan, Lapangan Olahraga, Halaman Sekolah Luas, Musholla, dan Lingkungan Alam Pegunungan Banga-banga.",
+    "Sarana dan prasarana UPTD SMPN SATAP 4 BARRU: UKS, Laboratorium Komputer, Lab IPA, Perpustakaan, Lapangan Olahraga, dan Lingkungan Alam Pegunungan Banga-banga.",
 };
 
 export default function FasilitasPage() {

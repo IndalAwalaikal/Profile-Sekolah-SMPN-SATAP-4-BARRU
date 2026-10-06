@@ -7,24 +7,32 @@ import { PageHeader } from "@/components/ui/page-header";
 import { Section } from "@/components/ui/section-heading";
 import { Icon } from "@/components/ui/icon";
 
-export const metadata: Metadata = {
-  title: "Galeri",
-  description:
-    "Dokumentasi foto kegiatan SMP Negeri Satu Atap 4 Barru: seni budaya, olahraga, lingkungan, dan kesiswaan.",
-};
-
 type SearchParams = Promise<{ kategori?: string; tahun?: string }>;
+
+export async function generateMetadata({ searchParams }: { searchParams: SearchParams }): Promise<Metadata> {
+  const params = await searchParams;
+  const hasValidCategory = galleryCategories.includes(params.kategori as (typeof galleryCategories)[number]);
+  const years = new Set(galleryAlbums.flatMap((album) => album.date ? [album.date.slice(0, 4)] : []));
+  const hasValidYear = years.has(params.tahun ?? "");
+  return {
+    title: "Galeri",
+    description:
+      "Dokumentasi foto kegiatan SMP Negeri Satu Atap 4 Barru: seni budaya, olahraga, lingkungan, dan kesiswaan.",
+    alternates: { canonical: "/galeri" },
+    ...(hasValidCategory || hasValidYear ? { robots: { index: false, follow: true } } : {}),
+  };
+}
 
 export default async function GaleriPage({ searchParams }: { searchParams: SearchParams }) {
   const params = await searchParams;
   const selectedCategory = galleryCategories.includes(params.kategori as (typeof galleryCategories)[number])
     ? params.kategori!
     : "Semua";
-  const years = [...new Set(galleryAlbums.map((album) => album.date.slice(0, 4)))].sort().reverse();
+  const years = [...new Set(galleryAlbums.flatMap((album) => album.date ? [album.date.slice(0, 4)] : []))].sort().reverse();
   const selectedYear = years.includes(params.tahun ?? "") ? params.tahun : "Semua";
   const albums = galleryAlbums.filter((album) =>
     (selectedCategory === "Semua" || album.category === selectedCategory) &&
-    (selectedYear === "Semua" || album.date.startsWith(selectedYear!)),
+    (selectedYear === "Semua" || album.date?.startsWith(selectedYear!)),
   );
 
   const filterHref = (category: string, year: string) => {
@@ -54,7 +62,7 @@ export default async function GaleriPage({ searchParams }: { searchParams: Searc
               >{category}</Link>
             ))}
           </div>
-          <div role="group" aria-label="Filter tahun galeri" className="flex flex-wrap gap-2">
+          {years.length > 0 && <div role="group" aria-label="Filter tahun galeri" className="flex flex-wrap gap-2">
             {["Semua", ...years].map((year) => (
               <Link
                 key={year}
@@ -63,7 +71,7 @@ export default async function GaleriPage({ searchParams }: { searchParams: Searc
                 className={`inline-flex min-h-11 items-center rounded-full border px-4 text-sm font-bold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${selectedYear === year ? "border-gold-500 bg-gold-100 text-brand-950" : "border-line text-body hover:bg-tint"}`}
               >{year === "Semua" ? "Semua tahun" : year}</Link>
             ))}
-          </div>
+          </div>}
           <p className="text-sm text-muted" aria-live="polite">{albums.length} album</p>
         </div>
         <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -95,13 +103,11 @@ export default async function GaleriPage({ searchParams }: { searchParams: Searc
                   <p className="mt-2 line-clamp-2 text-[14px] leading-relaxed text-muted">
                     {album.description}
                   </p>
-                  <time
-                    dateTime={album.date}
-                    className="mt-auto inline-flex items-center gap-1.5 pt-4 text-[13px] font-semibold text-muted"
-                  >
-                    <Icon name="calendar" size={13} />
-                    {formatDateShort(album.date)}
-                  </time>
+                  {album.date ? (
+                    <time dateTime={album.date} className="mt-auto inline-flex items-center gap-1.5 pt-4 text-[13px] font-semibold text-muted">
+                      <Icon name="calendar" size={13} />{formatDateShort(album.date)}
+                    </time>
+                  ) : null}
                 </div>
               </Link>
             </li>

@@ -7,6 +7,8 @@ export interface NewsArticle {
   excerpt: string;
   /** Paragraf isi artikel, sudah dipecah per paragraf. */
   content: string[];
+  /** Bagian opsional dengan subjudul, untuk artikel yang memiliki struktur tematik. */
+  sections?: { heading: string; paragraphs: string[] }[];
   /** Tanggal terbit dalam format ISO. */
   date: string;
   author: string;
@@ -45,7 +47,7 @@ export interface GalleryAlbum {
   slug: string;
   title: string;
   description: string;
-  date: string;
+  date?: string;
   category: string;
   cover: string;
   photos: Photo[];

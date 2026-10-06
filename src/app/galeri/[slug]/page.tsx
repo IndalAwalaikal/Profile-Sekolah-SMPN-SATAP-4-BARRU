@@ -7,6 +7,7 @@ import { Section, SectionHeading } from "@/components/ui/section-heading";
 import { PhotoGrid } from "@/components/gallery/photo-grid";
 import { Lightbox } from "@/components/gallery/lightbox";
 import { Icon } from "@/components/ui/icon";
+import { siteConfig } from "@/lib/site";
 
 interface AlbumPageProps {
   params: Promise<{ slug: string }>;
@@ -25,6 +26,15 @@ export async function generateMetadata({
   return {
     title: album.title,
     description: album.description,
+    alternates: { canonical: `/galeri/${album.slug}` },
+    openGraph: {
+      type: "website",
+      title: album.title,
+      description: album.description,
+      url: `${siteConfig.url}/galeri/${album.slug}`,
+      images: [{ url: album.cover, alt: album.title }],
+    },
+    twitter: { card: "summary_large_image", title: album.title, description: album.description },
   };
 }
 
@@ -50,10 +60,12 @@ export default async function AlbumGaleriPage({ params }: AlbumPageProps) {
             <Icon name="image" size={15} />
             {album.photos.length} foto
           </span>
-          <span className="inline-flex items-center gap-1.5">
-            <Icon name="calendar" size={15} />
-            {formatDate(album.date)}
-          </span>
+          {album.date ? (
+            <span className="inline-flex items-center gap-1.5">
+              <Icon name="calendar" size={15} />
+              {formatDate(album.date)}
+            </span>
+          ) : null}
           <span className="inline-flex items-center gap-1.5 rounded-full bg-tint px-3 py-1 text-[12px] font-bold text-accent">
             {album.category}
           </span>

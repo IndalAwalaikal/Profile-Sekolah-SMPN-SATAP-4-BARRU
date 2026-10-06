@@ -18,16 +18,21 @@ export function NewsSection() {
           Semua Berita
         </ButtonLink>
       </div>
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {latest.map((article, i) => (
-          <div
-            key={article.slug}
-            data-reveal
-            style={{ "--reveal-order": i } as React.CSSProperties}
-          >
-            <NewsCard article={article} />
+      <div className="mt-12 grid gap-5 lg:grid-cols-3">
+        {latest[0] && (
+          <div className="lg:col-span-2" data-reveal style={{ "--reveal-order": 0 } as React.CSSProperties}>
+            <NewsCard article={latest[0]} variant="featured" />
           </div>
-        ))}
+        )}
+        {latest.length > 1 && (
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+            {latest.slice(1).map((article, i) => (
+              <div key={article.slug} data-reveal style={{ "--reveal-order": i + 1 } as React.CSSProperties}>
+                <NewsCard article={article} variant="compact" />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </Section>
   );

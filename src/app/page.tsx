@@ -10,6 +10,8 @@ import { PPDBBanner } from "@/components/home/ppdb-banner";
 
 export const metadata: Metadata = {
   title: "Beranda",
+  description:
+    "Situs resmi SMPN Satap 4 Barru di Anabanua, Kabupaten Barru. Kenali profil sekolah, kurikulum, prestasi, kegiatan, berita, dan informasi penerimaan murid baru.",
 };
 
 export default function HomePage() {

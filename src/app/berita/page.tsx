@@ -7,14 +7,20 @@ import { Section } from "@/components/ui/section-heading";
 import { NewsCard } from "@/components/news/news-card";
 import { Icon } from "@/components/ui/icon";
 
-export const metadata: Metadata = {
-  title: "Berita",
-  description:
-    "Berita terbaru seputar kegiatan, prestasi, dan pengumuman SMP Negeri Satu Atap 4 Barru.",
-};
-
 interface BeritaPageProps {
   searchParams: Promise<{ kategori?: string }>;
+}
+
+export async function generateMetadata({ searchParams }: BeritaPageProps): Promise<Metadata> {
+  const { kategori } = await searchParams;
+  const validCategory = kategori && newsCategories.includes(kategori as (typeof newsCategories)[number]);
+  return {
+    title: "Berita",
+    description:
+      "Berita terbaru seputar kegiatan, prestasi, dan pengumuman SMP Negeri Satu Atap 4 Barru.",
+    alternates: { canonical: "/berita" },
+    ...(validCategory ? { robots: { index: false, follow: true } } : {}),
+  };
 }
 
 export default async function BeritaPage({ searchParams }: BeritaPageProps) {
@@ -50,9 +56,14 @@ export default async function BeritaPage({ searchParams }: BeritaPageProps) {
             {articles.length} artikel
           </span>
         </nav>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {articles.map((article) => (
-            <NewsCard key={article.slug} article={article} />
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {articles[0] && (
+            <div className="sm:col-span-2">
+              <NewsCard article={articles[0]} variant="featured" />
+            </div>
+          )}
+          {articles.slice(1).map((article) => (
+            <NewsCard key={article.slug} article={article} variant="compact" />
           ))}
         </div>
       </Section>

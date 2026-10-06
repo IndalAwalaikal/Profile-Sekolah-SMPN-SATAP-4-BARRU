@@ -17,13 +17,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/berita",
     "/galeri",
     "/ppdb",
+    "/unduhan",
     "/kontak",
   ];
 
   return [
     ...staticPaths.map((path) => ({
       url: `${siteConfig.url}${path}`,
-      lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: path === "" ? 1 : path === "/kurikulum" ? 0.9 : 0.7,
     })),
@@ -35,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...galleryAlbums.map((album) => ({
       url: `${siteConfig.url}/galeri/${album.slug}`,
-      lastModified: new Date(album.date),
+      ...(album.date ? { lastModified: new Date(album.date) } : {}),
       changeFrequency: "monthly" as const,
       priority: 0.5,
     })),

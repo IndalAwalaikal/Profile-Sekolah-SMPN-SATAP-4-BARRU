@@ -12,7 +12,7 @@ export interface GalleryCarouselSlide {
   title: string;
   description: string;
   category: string;
-  date: string;
+  date?: string;
   href: string;
 }
 
@@ -147,7 +147,7 @@ export function GalleryCarousel({ slides }: { slides: GalleryCarouselSlide[] }) 
                   )}
                 >
                   <span className="block text-[11px] font-bold tracking-widest text-brand-200 uppercase">
-                    {formatDateShort(slide.date)}
+                    {slide.date ? formatDateShort(slide.date) : "Dokumentasi kegiatan"}
                   </span>
                   <Link
                     href={slide.href}

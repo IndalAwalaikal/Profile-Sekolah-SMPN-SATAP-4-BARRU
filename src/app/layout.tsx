@@ -26,12 +26,26 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  applicationName: siteConfig.name,
+  category: "education",
+  creator: siteConfig.legalName,
+  publisher: siteConfig.legalName,
+  robots: { index: true, follow: true },
+  alternates: {
+    types: { "application/rss+xml": `${siteConfig.url}/feed.xml` },
+  },
   openGraph: {
     title: siteConfig.name,
     description: siteConfig.description,
     type: "website",
     locale: "id_ID",
     siteName: siteConfig.name,
+    url: siteConfig.url,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
   },
 };
 
@@ -49,6 +63,32 @@ export default function RootLayout({
     >
       <body className="flex min-h-screen flex-col">
         <ThemeProvider>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "EducationalOrganization",
+              name: siteConfig.legalName,
+              alternateName: siteConfig.name,
+              url: siteConfig.url,
+              email: siteConfig.email,
+              identifier: {
+                "@type": "PropertyValue",
+                propertyID: "NPSN",
+                value: siteConfig.npsn,
+              },
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: siteConfig.address,
+                addressLocality: "Barru",
+                addressRegion: "Sulawesi Selatan",
+                postalCode: "90712",
+                addressCountry: "ID",
+              },
+            }).replace(/</g, "\\u003c"),
+          }}
+        />
         <a
           href="#konten-utama"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[70] focus:rounded-full focus:bg-brand-600 focus:px-5 focus:py-2.5 focus:text-sm focus:font-bold focus:text-white"
