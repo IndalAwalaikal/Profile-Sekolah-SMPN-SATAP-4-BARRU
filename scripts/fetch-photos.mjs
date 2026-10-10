@@ -1,7 +1,7 @@
 /**
  * Mengunduh foto asli dari internet untuk menggantikan placeholder SVG:
  * - Foto kegiatan/sekolah: Wikimedia Commons (API pencarian bebas lisensi).
- * - Potret guru/staf: randomuser.me (foto potret untuk demo).
+ * - Foto individu tidak diunduh oleh skrip ini.
  * Catatan atribusi tersimpan di public/images/credits.json.
  * Jalankan: node scripts/fetch-photos.mjs
  */
@@ -38,21 +38,6 @@ const sceneSlots = [
   { name: "galeri-10", query: "marching band performance" },
   { name: "galeri-11", query: "greenhouse plants garden" },
   { name: "galeri-12", query: "students group school Indonesia" },
-];
-
-/** Slot potret: nama file → URL foto potret pravatar (foto demo, 400×400). */
-const portraitSlots = [
-  { name: "kepala-sekolah", url: "https://i.pravatar.cc/400?img=53" },
-  { name: "guru-1", url: "https://i.pravatar.cc/400?img=47" },
-  { name: "guru-2", url: "https://i.pravatar.cc/400?img=12" },
-  { name: "guru-3", url: "https://i.pravatar.cc/400?img=32" },
-  { name: "guru-4", url: "https://i.pravatar.cc/400?img=25" },
-  { name: "guru-5", url: "https://i.pravatar.cc/400?img=59" },
-  { name: "guru-6", url: "https://i.pravatar.cc/400?img=16" },
-  { name: "guru-7", url: "https://i.pravatar.cc/400?img=68" },
-  { name: "guru-8", url: "https://i.pravatar.cc/400?img=44" },
-  { name: "guru-9", url: "https://i.pravatar.cc/400?img=69" },
-  { name: "guru-10", url: "https://i.pravatar.cc/400?img=5" },
 ];
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -129,13 +114,7 @@ async function fetchScene(slot) {
   throw new Error(`Tidak ada hasil cocok untuk "${slot.query}"`);
 }
 
-async function fetchPortrait(slot) {
-  const file = join(outDir, `${slot.name}.jpg`);
-  const bytes = await download(slot.url, file);
-  return { file: `${slot.name}.jpg`, source: slot.url, bytes };
-}
-
-const credits = { scenes: {}, portraits: {} };
+const credits = { scenes: {} };
 let ok = 0;
 let failed = [];
 
@@ -151,24 +130,6 @@ for (const slot of sceneSlots) {
     credits.scenes[slot.name] = meta;
     ok++;
     console.log(`OK  ${slot.name}.jpg  (${(meta.bytes / 1024).toFixed(0)} KB) — ${slot.query}`);
-  } catch (err) {
-    failed.push(slot.name);
-    console.error(`GAGAL ${slot.name}: ${err.message}`);
-  }
-}
-
-for (const slot of portraitSlots) {
-  const file = join(outDir, `${slot.name}.jpg`);
-  if (existsSync(file)) {
-    ok++;
-    console.log(`SKIP ${slot.name}.jpg (sudah ada)`);
-    continue;
-  }
-  try {
-    const meta = await withRetry(slot.name, () => fetchPortrait(slot));
-    credits.portraits[slot.name] = meta;
-    ok++;
-    console.log(`OK  ${slot.name}.jpg  (${(meta.bytes / 1024).toFixed(0)} KB)`);
   } catch (err) {
     failed.push(slot.name);
     console.error(`GAGAL ${slot.name}: ${err.message}`);

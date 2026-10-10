@@ -3,6 +3,25 @@
 /* Dark mode berbasis class pada <html> (dikelola next-themes) */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Kerangka kartu konten bersama untuk berita, agenda, dan informasi. */
+@layer components {
+  .content-card {
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    background-color: var(--surface);
+    transition:
+      border-color 180ms ease,
+      box-shadow 180ms ease,
+      transform 180ms ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .content-card {
+      transition: none;
+    }
+  }
+}
+
 @theme inline {
   --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
 

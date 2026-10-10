@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 
 /**
  * Membuat gambar placeholder SVG untuk seluruh situs:
- * pemandangan sekolah (gedung/lapangan/perbukitan) dan siluet potret.
+ * pemandangan sekolah (gedung/lapangan/perbukitan).
  * Ganti dengan foto asli nantinya — nama file konsisten dengan src/data.
  */
 
@@ -60,18 +60,6 @@ function scene(w, h, i, labelText) {
   return wrap(w, h, body);
 }
 
-/** Siluet potret (kepala sekolah / guru / staf). */
-function portrait(w, h, i, labelText) {
-  const p = palettes[i % palettes.length];
-  let body = gradient("pg" + i, [p.sky[1], p.accent], w, h);
-  body += `<circle cx="${w / 2}" cy="${h * 0.3}" r="${h * 0.18}" fill="#ffffff" opacity="0.15"/>`;
-  body += `<circle cx="${w / 2}" cy="${h * 0.4}" r="${w * 0.13}" fill="#e8c39e"/>`;
-  body += `<path d="M ${w / 2 - w * 0.26} ${h} a ${w * 0.26} ${h * 0.19} 0 0 1 ${w * 0.52} 0 Z" fill="#e8c39e"/>`;
-  body += `<polygon points="${w / 2 - w * 0.07},${h * 0.62} ${w / 2},${h * 0.73} ${w / 2 + w * 0.07},${h * 0.62}" fill="#ffffff" opacity="0.9"/>`;
-  body += label(w, h, labelText, p.label);
-  return wrap(w, h, body);
-}
-
 const jobs = [
   ...[
     ["hero-sekolah.svg", 1600, 900, "SMPN SATAP 4 BARRU", 0],
@@ -80,12 +68,6 @@ const jobs = [
     ...Array.from({ length: 12 }, (_, n) => [`galeri-${n + 1}.svg`, 800, 600, `Foto ${n + 1}`, n]),
   ].map(([name, w, h, label, i]) => () =>
     writeFileSync(join(outDir, name), scene(w, h, i, label))),
-
-  ...[
-    ["kepala-sekolah.svg", 640, 800, "Kepala Sekolah", 0],
-    ...Array.from({ length: 10 }, (_, n) => [`guru-${n + 1}.svg`, 480, 480, `Guru ${n + 1}`, n + 1]),
-  ].map(([name, w, h, label, i]) => () =>
-    writeFileSync(join(outDir, name), portrait(w, h, i, label))),
 ];
 
 jobs.forEach((job) => job());

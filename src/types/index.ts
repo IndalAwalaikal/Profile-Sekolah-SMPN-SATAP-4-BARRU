@@ -35,7 +35,7 @@ export interface Teacher {
   subjects?: string[];
   /** Beban mengajar / keterangan tugas mingguan. */
   hours?: string;
-  image: string;
+  image?: string;
 }
 
 export interface Photo {

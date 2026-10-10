@@ -1,83 +1,101 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import { orgStructure, schoolDataYear, teachers } from "@/data/profile";
+import { orgStructure } from "@/data/profile";
 import { PageHeader } from "@/components/ui/page-header";
-import { Section, SectionHeading } from "@/components/ui/section-heading";
-import { ButtonLink } from "@/components/ui/button-link";
+import { Section } from "@/components/ui/section-heading";
 
 export const metadata: Metadata = {
-  title: "Struktur Organisasi & Tim Pengembang Kurikulum",
+  title: "Struktur Organisasi",
   description:
-    "Informasi struktur organisasi UPTD SMPN SATAP 4 BARRU berdasarkan data yang tersedia.",
+    "Bagan struktur organisasi UPTD SMPN SATAP 4 BARRU, dari komite dan kepala sekolah hingga peserta didik.",
 };
 
-export default function StrukturOrganisasiPage() {
-  const kepala = teachers.find((t) => t.group === "kepala");
+type OrganizationNode = { name: string; role: string };
 
+function NodeCard({ name, role, featured = false }: OrganizationNode & { featured?: boolean }) {
+  return (
+    <div className="flex h-full w-full flex-col overflow-hidden rounded-2xl border border-sky-900/30 bg-white text-center shadow-sm dark:border-sky-200/30 dark:bg-slate-950">
+      <p
+        className={`flex min-h-12 items-center justify-center px-4 py-3 text-sm font-extrabold tracking-wide text-white ${
+          featured ? "bg-[#123d57]" : "bg-[#185873]"
+        }`}
+      >
+        {name}
+      </p>
+      <p className="flex min-h-14 flex-1 items-center justify-center border-t border-sky-900/25 bg-sky-50 px-3 py-2.5 text-[11px] font-extrabold uppercase tracking-[0.16em] leading-4 text-[#123d57] dark:border-sky-200/30 dark:bg-slate-900 dark:text-sky-100">
+        {role}
+      </p>
+    </div>
+  );
+}
+
+function Connector({ className = "" }: { className?: string }) {
+  return <div aria-hidden="true" className={`w-px bg-sky-900/50 dark:bg-sky-100/50 ${className}`} />;
+}
+
+function Branch({ title, members }: { title: string; members: readonly OrganizationNode[] }) {
+  return (
+    <section className="rounded-3xl border border-line bg-surface p-5 shadow-sm sm:p-7">
+      <h3 className="mx-auto w-fit rounded-full border-2 border-[#185873] px-6 py-2 text-center text-xs font-extrabold uppercase tracking-[0.18em] text-[#123d57] dark:border-sky-300 dark:text-sky-100">
+        {title}
+      </h3>
+      <div aria-hidden="true" className="mx-auto h-5 w-px bg-sky-900/50 dark:bg-sky-100/50" />
+      <ul className="grid items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        {members.map((member) => (
+          <li key={`${member.name}-${member.role}`} className="w-full">
+            <NodeCard {...member} />
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+export default function StrukturOrganisasiPage() {
   return (
     <>
       <PageHeader
-        title="Struktur Organisasi & Tim Pengembang Kurikulum"
-        description={`Susunan berikut berdasarkan data Tahun Pelajaran ${schoolDataYear}. Hubungi sekolah untuk memastikan susunan organisasi tahun berjalan.`}
+        title="Struktur Organisasi"
+        description="Susunan unsur organisasi dan pelaksana pendidikan UPTD SMPN SATAP 4 BARRU."
         crumbs={[
           { label: "Beranda", href: "/" },
           { label: "Profil", href: "/profil" },
           { label: "Struktur Organisasi" },
         ]}
       />
-
       <Section>
-        {/* Kepala Sekolah */}
-        {kepala ? (
-          <div className="mx-auto mb-14 max-w-lg rounded-3xl bg-brand-950 p-8 text-center text-white shadow-xl shadow-brand-950/10">
-            <Image
-              src={kepala.image}
-              alt={kepala.name}
-              width={192}
-              height={192}
-              quality={90}
-              className="mx-auto h-28 w-28 rounded-full object-cover ring-4 ring-gold-400/80"
-            />
-            <h2 className="mt-4 text-2xl font-extrabold">{kepala.name}</h2>
-            <p className="mt-1 text-sm font-bold uppercase tracking-[0.16em] text-gold-400">
-              {kepala.role}
-            </p>
-            <p className="mt-4 text-xs leading-relaxed text-brand-100">
-              Data jabatan mengikuti susunan organisasi Tahun Pelajaran {schoolDataYear}.
-            </p>
-            <div className="mt-6 flex justify-center gap-3">
-              <ButtonLink href="/kontak" variant="inverse" size="sm">
-                Hubungi Sekolah
-              </ButtonLink>
-              <ButtonLink href="/kurikulum" variant="outline" size="sm" className="border-white/30 text-white hover:bg-white/10">
-                Lihat Kurikulum
-              </ButtonLink>
+        <div className="mx-auto max-w-6xl">
+          <div className="grid justify-items-center gap-4 sm:grid-cols-2 sm:items-start">
+            <div className="flex w-full flex-col items-center gap-2">
+              <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.2em] text-muted">Mitra Sekolah</p>
+              <NodeCard {...orgStructure.committee} />
+            </div>
+            <div className="flex w-full flex-col items-center gap-2">
+              <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.2em] text-muted">Pimpinan</p>
+              <NodeCard {...orgStructure.principal} featured />
             </div>
           </div>
-        ) : null}
 
-        {/* Grup Organisasi */}
-        <div className="grid gap-10 lg:grid-cols-2">
-          {orgStructure
-            .filter((group) => group.title !== "Kepala Sekolah")
-            .map((group) => (
-              <div key={group.title} className="rounded-3xl border border-line bg-surface p-6 shadow-sm">
-                <SectionHeading eyebrow="Unsur Struktur" title={group.title} />
-                <ul className="mt-6 space-y-3">
-                  {group.members.map((member) => (
-                    <li
-                      key={member.name}
-                      className="flex items-center justify-between gap-4 rounded-2xl border border-line bg-surface p-4 transition-all hover:-translate-y-0.5 hover:border-accent/50 hover:shadow-md"
-                    >
-                      <div>
-                        <p className="text-[15px] font-bold text-heading">{member.name}</p>
-                        <p className="mt-0.5 text-xs text-muted">{member.role}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <div className="mx-auto flex h-10 justify-center"><Connector className="h-full" /></div>
+          <div className="mx-auto flex max-w-sm flex-col items-center">
+            <NodeCard {...orgStructure.administration} />
+          </div>
+
+          <div className="mx-auto flex h-10 justify-center"><Connector className="h-full" /></div>
+          <div className="grid items-stretch gap-6 lg:grid-cols-2">
+            <Branch title={orgStructure.coordinators.title} members={orgStructure.coordinators.members} />
+            <Branch title={orgStructure.unitHeads.title} members={orgStructure.unitHeads.members} />
+          </div>
+
+          <div className="mx-auto flex h-10 justify-center"><Connector className="h-full" /></div>
+          <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl border-2 border-[#185873] bg-white text-center shadow-sm dark:border-sky-300 dark:bg-slate-950">
+            <p className="px-4 py-3 text-xs font-extrabold uppercase tracking-[0.16em] text-[#123d57] dark:text-sky-100">
+              {orgStructure.learningTeam}
+            </p>
+          </div>
+          <div className="mx-auto flex h-7 justify-center"><Connector className="h-full" /></div>
+          <div className="mx-auto max-w-3xl rounded-2xl bg-[#123d57] px-4 py-3 text-center text-xs font-extrabold uppercase tracking-[0.2em] text-white shadow-sm">
+            {orgStructure.students}
+          </div>
         </div>
       </Section>
     </>

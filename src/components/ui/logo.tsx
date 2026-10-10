@@ -17,7 +17,7 @@ export function Logo({
     <Link href="/" className={cn("group min-w-0", className)} aria-label="Beranda SMPN Satap 4 Barru">
       <span className="flex items-center gap-2.5 sm:gap-3">
         <PinisiMark size={compact ? 44 : 54} className="shrink-0 transition-transform group-hover:-translate-y-0.5" />
-        <span className="flex min-w-0 flex-col leading-tight">
+        <span className="flex min-w-0 flex-col leading-tight max-[400px]:hidden">
           <span
             className={cn(
               "truncate font-extrabold tracking-tight",

@@ -352,62 +352,29 @@ export const programUnggulan = [
   },
 ] as const;
 
-/** Susunan organisasi berdasarkan data yang tersedia untuk Tahun Pelajaran 2025/2026. */
-export const orgStructure = [
-  {
-    title: "Kepala Sekolah",
+/** Struktur organisasi sekolah mengikuti bagan yang diberikan sekolah. */
+export const orgStructure = {
+  committee: { name: "Sahnun", role: "Komite" },
+  principal: { name: "Nurinsyanah, S.Pd.", role: "Kepala Sekolah" },
+  administration: { name: "Sitti Rukman, S.Sos.", role: "Kepala Tenaga Administrasi Sekolah" },
+  coordinators: {
+    title: "Wakasek Urusan-urusan",
     members: [
-      {
-        name: "Nurinsyanah, S.Pd.",
-        role: "Plt. Kepala UPTD SMPN Satap 4 Barru / Penanggung Jawab TPK",
-      },
+      { name: "Esra, S.Pd.", role: "Kurikulum" },
+      { name: "Wahyuddin, S.Pd.", role: "Kesiswaan" },
+      { name: "Nurinsyanah, S.Pd.", role: "Sarana & Prasarana" },
     ],
   },
-  {
-    title: "Pengawas & Komite Sekolah",
+  unitHeads: {
+    title: "Kepala",
     members: [
-      {
-        name: "H. Syamsuriadi, S.Pd., M.Pd.",
-        role: "Pengawas Diknas Kab. Barru / Pengawas Pembina",
-      },
-      {
-        name: "Sahnun",
-        role: "Ketua Komite Sekolah",
-      },
+      { name: "Rustiah, S.Pd.I.", role: "Perpustakaan" },
+      { name: "Andi Nu’manah, S.Pd.", role: "Laboratorium" },
     ],
   },
-  {
-    title: "Tim Pengembang Kurikulum (TPK)",
-    members: [
-      {
-        name: "Esra, S.Pd.",
-        role: "Urusan Kurikulum / Ketua Tim TPK",
-      },
-      {
-        name: "Wahyuddin, S.Pd.",
-        role: "Urusan Kesiswaan / Wakil Ketua Tim TPK",
-      },
-      {
-        name: "Sitti Rukman, S.Sos.",
-        role: "Kepala Tata Usaha / Tenaga Kependidikan",
-      },
-    ],
-  },
-  {
-    title: "Dewan Guru / Anggota Tim Pengembang Kurikulum",
-    members: [
-      { name: "Rustiah, S.Pd.", role: "Guru PAI & Budi Pekerti" },
-      { name: "Andi Nu’manah, S.P.", role: "Guru Ilmu Pengetahuan Alam (IPA)" },
-      { name: "Riri Anggrainy, S.Pd.", role: "Guru Seni Budaya" },
-      { name: "Supriadi, S.Pd.", role: "Guru Bahasa Indonesia" },
-      { name: "Nurhikmah Sirajuddin, S.Pd.", role: "Guru Matematika" },
-      { name: "Rachmawati, S.Pd.", role: "Guru Bahasa Daerah" },
-      { name: "A. Fuad Renaldi A. Parussengi, S.Or.", role: "Guru PJOK" },
-      { name: "Armawanah Abdullah", role: "Guru Bahasa Inggris" },
-      { name: "Fauziah, S.Pd., M.Pd.", role: "Guru Informatika" },
-    ],
-  },
-] as const;
+  learningTeam: "Wali Kelas, Guru Mata Pelajaran, Guru BK",
+  students: "Peserta Didik",
+} as const;
 
 /** Daftar tenaga pendidik berdasarkan data yang tersedia untuk Tahun Pelajaran 2025/2026. */
 export const teachers: Teacher[] = [
@@ -416,7 +383,7 @@ export const teachers: Teacher[] = [
     role: "Plt. Kepala Sekolah",
     group: "kepala",
     hours: "Manajerial, Supervisi & Penanggung Jawab TPK",
-    image: "/images/kepala-sekolah.jpg",
+    image: "/nurinsyanah.png",
   },
   {
     name: "Esra, S.Pd.",
@@ -424,7 +391,6 @@ export const teachers: Teacher[] = [
     group: "waka",
     subjects: ["Kurikulum Merdeka", "Matematika / IPA"],
     hours: "Manajerial Kurikulum & Pembelajaran",
-    image: "/images/guru-1.jpg",
   },
   {
     name: "Wahyuddin, S.Pd.",
@@ -432,7 +398,6 @@ export const teachers: Teacher[] = [
     group: "waka",
     subjects: ["Kesiswaan", "IPS"],
     hours: "Pembinaan Kesiswaan & Kedisiplinan",
-    image: "/images/guru-2.jpg",
   },
   {
     name: "Rustiah, S.Pd.",
@@ -440,7 +405,6 @@ export const teachers: Teacher[] = [
     group: "guru",
     subjects: ["Pendidikan Agama Islam", "Baca Tulis Al-Qur'an (BTQ)"],
     hours: "Pembinaan Imtaq & Ibadah Berjamaah",
-    image: "/images/guru-3.jpg",
   },
   {
     name: "Andi Nu’manah, S.P.",
@@ -448,7 +412,6 @@ export const teachers: Teacher[] = [
     group: "guru",
     subjects: ["Ilmu Pengetahuan Alam (IPA)", "Laboratorium IPA"],
     hours: "Praktikum Sains & Lingkungan",
-    image: "/images/guru-4.jpg",
   },
   {
     name: "Riri Anggrainy, S.Pd.",
@@ -456,7 +419,6 @@ export const teachers: Teacher[] = [
     group: "guru",
     subjects: ["Seni Budaya", "Seni Tari Bugis"],
     hours: "Pembinaan Tari Tradisional & P5 Seni",
-    image: "/images/guru-5.jpg",
   },
   {
     name: "Supriadi, S.Pd.",
@@ -464,7 +426,6 @@ export const teachers: Teacher[] = [
     group: "guru",
     subjects: ["Bahasa Indonesia", "Literasi"],
     hours: "Pembinaan Pojok Baca & Karya Tulis",
-    image: "/images/guru-6.jpg",
   },
   {
     name: "Nurhikmah Sirajuddin, S.Pd.",
@@ -472,7 +433,6 @@ export const teachers: Teacher[] = [
     group: "guru",
     subjects: ["Matematika", "OSN MIPAS"],
     hours: "Penguatan Numerasi & Olimpiade Sains",
-    image: "/images/guru-7.jpg",
   },
   {
     name: "Rachmawati, S.Pd.",
@@ -480,7 +440,6 @@ export const teachers: Teacher[] = [
     group: "guru",
     subjects: ["Bahasa Daerah Bugis", "Kearifan Lokal"],
     hours: "Pelestarian Sastra & Budaya Daerah",
-    image: "/images/guru-8.jpg",
   },
   {
     name: "A. Fuad Renaldi A. Parussengi, S.Or.",
@@ -488,7 +447,6 @@ export const teachers: Teacher[] = [
     group: "guru",
     subjects: ["PJOK", "Gala Siswa Indonesia (GSI)"],
     hours: "Pembinaan Olahraga & Kebugaran Jasmani",
-    image: "/images/guru-9.jpg",
   },
   {
     name: "Armawanah Abdullah",
@@ -496,7 +454,6 @@ export const teachers: Teacher[] = [
     group: "guru",
     subjects: ["Bahasa Inggris", "Komunikasi Global"],
     hours: "English Literacy & Wawasan Global",
-    image: "/images/guru-10.jpg",
   },
   {
     name: "Fauziah, S.Pd., M.Pd.",
@@ -504,14 +461,12 @@ export const teachers: Teacher[] = [
     group: "guru",
     subjects: ["Informatika", "Laboratorium Komputer"],
     hours: "Pembelajaran Berbasis Teknologi & TIK",
-    image: "/images/guru-6.jpg",
   },
   {
     name: "Sitti Rukman, S.Sos.",
     role: "Kepala Tata Usaha",
     group: "staf",
     hours: "Layanan Administrasi Sekolah & TPK",
-    image: "/images/guru-2.jpg",
   },
 ];
 

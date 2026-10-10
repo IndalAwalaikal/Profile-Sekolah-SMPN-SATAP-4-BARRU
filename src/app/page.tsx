@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Hero } from "@/components/home/hero";
 import { StatsBand } from "@/components/home/stats-band";
+import { QuickLinks } from "@/components/home/quick-links";
 import { CurriculumPreview } from "@/components/home/curriculum-preview";
 import { NewsSection } from "@/components/home/news-section";
 import { EkskulSection } from "@/components/home/ekskul-section";
@@ -19,6 +20,7 @@ export default function HomePage() {
     <>
       <Hero />
       <StatsBand />
+      <QuickLinks />
       <CurriculumPreview />
       <NewsSection />
       <EkskulSection />

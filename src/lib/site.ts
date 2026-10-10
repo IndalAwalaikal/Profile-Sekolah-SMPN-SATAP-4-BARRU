@@ -100,6 +100,8 @@ export const mainNav: NavGroup[] = [
     children: [
       { label: "Berita", href: "/berita", description: "Kabar terbaru seputar kegiatan sekolah" },
       { label: "Galeri", href: "/galeri", description: "Dokumentasi foto kegiatan dan lingkungan" },
+      { label: "Unduhan", href: "/unduhan", description: "Dokumen publik sekolah berdasarkan kategori" },
+      { label: "Tanya Jawab", href: "/faq", description: "Jawaban ringkas untuk pertanyaan umum" },
       { label: "Kontak & Lokasi", href: "/kontak", description: "Alamat, peta lokasi Banga-banga, dan kemitraan" },
     ],
   },
@@ -123,6 +125,8 @@ export const footerNav = {
   informasi: [
     { label: "Berita Sekolah", href: "/berita" },
     { label: "Galeri Foto", href: "/galeri" },
+    { label: "Unduhan", href: "/unduhan" },
+    { label: "Tanya Jawab", href: "/faq" },
     { label: "Kemitraan & Kontak", href: "/kontak" },
   ],
 } as const;

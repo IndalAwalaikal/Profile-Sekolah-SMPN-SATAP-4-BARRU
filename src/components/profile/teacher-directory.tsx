@@ -58,13 +58,19 @@ export function TeacherDirectory() {
                       aria-label={`Lihat profil ${teacher.name}`}
                       className="group w-full overflow-hidden rounded-2xl border border-line bg-surface text-left transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-950/10"
                     >
-                      <div className="relative aspect-square overflow-hidden">
-                        <ShimmerImage
-                          src={teacher.image}
-                          alt={teacher.name}
-                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                          className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
+                      <div className="relative flex aspect-square items-center justify-center overflow-hidden bg-tint">
+                        {teacher.image ? (
+                          <ShimmerImage
+                            src={teacher.image}
+                            alt={teacher.name}
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                            className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                        ) : (
+                          <span aria-hidden="true" className="text-6xl font-extrabold text-accent">
+                            {teacher.name.trim().charAt(0)}
+                          </span>
+                        )}
                         <span className="absolute inset-0 flex items-end justify-center bg-gradient-to-t from-brand-950/80 via-transparent to-transparent p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                           <span className="flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1.5 text-[12px] font-bold text-white ring-1 ring-white/25 backdrop-blur-sm">
                             <Icon name="users" size={13} />
@@ -123,17 +129,25 @@ export function TeacherDirectory() {
             >
               <Icon name="close" size={16} />
             </button>
-            <div className="relative aspect-[4/3] overflow-hidden">
-              <Image
-                src={selected.image}
-                alt={selected.name}
-                fill
-                sizes="448px"
-                quality={90}
-                className="object-cover"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-950/70 via-transparent to-transparent" />
+            <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-tint">
+              {selected.image ? (
+                <>
+                  <Image
+                    src={selected.image}
+                    alt={selected.name}
+                    fill
+                    sizes="448px"
+                    quality={90}
+                    className="object-cover"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-950/70 via-transparent to-transparent" />
+                </>
+              ) : (
+                <span aria-hidden="true" className="text-7xl font-extrabold text-accent">
+                  {selected.name.trim().charAt(0)}
+                </span>
+              )}
             </div>
             <div className="p-6">
               <h3 className="text-xl font-extrabold tracking-tight text-heading">

@@ -97,17 +97,6 @@ async function regenFavicon() {
 
 const TARGETS = [
   // [file, lebar/tinggi minimum yang diinginkan]
-  ["public/images/guru-1.jpg", 800],
-  ["public/images/guru-2.jpg", 800],
-  ["public/images/guru-3.jpg", 800],
-  ["public/images/guru-4.jpg", 800],
-  ["public/images/guru-5.jpg", 800],
-  ["public/images/guru-6.jpg", 800],
-  ["public/images/guru-7.jpg", 800],
-  ["public/images/guru-8.jpg", 800],
-  ["public/images/guru-9.jpg", 800],
-  ["public/images/guru-10.jpg", 800],
-  ["public/images/kepala-sekolah.jpg", 800],
   ["public/images/galeri-2.jpg", 1800],
   ["public/images/galeri-4.jpg", 1920],
   ["public/images/galeri-12.jpg", 1920],

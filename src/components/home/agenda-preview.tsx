@@ -31,7 +31,7 @@ export function AgendaPreview() {
                 key={item.title}
                 data-reveal
                 style={{ "--reveal-order": i } as React.CSSProperties}
-                className="group flex gap-4 rounded-2xl border border-line bg-surface p-5 transition-all hover:-translate-y-0.5 hover:border-accent/50 hover:shadow-lg hover:shadow-brand-950/5"
+                className="group content-card flex gap-4 p-5 transition-all hover:-translate-y-0.5 hover:border-accent/50 hover:shadow-lg hover:shadow-brand-950/5"
               >
                 <div className="flex h-16 w-16 shrink-0 flex-col items-center justify-center rounded-xl bg-tint text-center transition-colors group-hover:bg-brand-600 group-hover:text-white">
                   <span className="text-2xl font-extrabold leading-none text-accent transition-colors group-hover:text-white">

@@ -20,7 +20,7 @@ export default function PPDBPage() {
         crumbs={[{ label: "Beranda", href: "/" }, { label: "PPDB" }]}
       />
       <Section>
-        <div className="mx-auto max-w-2xl rounded-3xl border border-line bg-surface p-8 text-center shadow-sm sm:p-10">
+        <div className="content-card mx-auto max-w-2xl p-6 text-center shadow-sm sm:p-10">
           <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-tint text-accent">
             <Icon name="calendar" size={24} />
           </span>

@@ -23,7 +23,7 @@ export function NewsCard({
     return (
       <Link
         href={`/berita/${article.slug}`}
-        className="group flex h-full min-h-28 overflow-hidden rounded-2xl border border-line bg-surface transition-all hover:-translate-y-0.5 hover:shadow-lg"
+        className="group content-card flex h-full min-h-28 overflow-hidden transition-all hover:-translate-y-0.5 hover:shadow-lg"
       >
         <div className="relative w-32 shrink-0 overflow-hidden sm:w-40">
           <ShimmerImage
@@ -54,7 +54,7 @@ export function NewsCard({
   if (variant === "featured") {
     return (
       <SpotlightCard className="h-full rounded-2xl">
-        <Link href={`/berita/${article.slug}`} className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-surface transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-950/10">
+        <Link href={`/berita/${article.slug}`} className="group relative content-card flex h-full flex-col overflow-hidden transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-950/10">
           <div className="relative block aspect-[16/9] overflow-hidden sm:aspect-[2/1]">
             <ShimmerImage src={article.image} alt={article.title} sizes="(max-width: 1024px) 100vw, 66vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
             <span className={`absolute left-4 top-4 z-20 rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wide ${categoryColors[article.category]}`}>
@@ -80,7 +80,7 @@ export function NewsCard({
 
   return (
     <SpotlightCard className="h-full rounded-2xl">
-      <Link href={`/berita/${article.slug}`} className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-surface transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-950/10">
+      <Link href={`/berita/${article.slug}`} className="group relative content-card flex h-full flex-col overflow-hidden transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-950/10">
         <div className="relative block aspect-[16/10] overflow-hidden">
           <ShimmerImage
             src={article.image}
