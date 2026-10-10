@@ -50,7 +50,7 @@ export function CurriculumPreview() {
           <div className="flex flex-col items-center justify-center lg:col-span-5">
             <div className="relative aspect-[4/5] w-full max-w-[420px] overflow-hidden rounded-[50%] border-[6px] border-white shadow-lg ring-2 ring-brand-300 dark:border-slate-800 dark:ring-brand-500">
               <Image
-                src={principal.image}
+                src={principal.image ?? "/nurinsyanah.png"}
                 alt={`Foto ${principal.name}`}
                 fill
                 sizes="(max-width: 768px) 420px, 460px"
