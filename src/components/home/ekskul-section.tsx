@@ -7,7 +7,7 @@ import { Icon } from "@/components/ui/icon";
 import { ButtonLink } from "@/components/ui/button-link";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Container } from "@/components/ui/container";
-import { ShimmerImage } from "@/components/ui/shimmer-image";
+import { ExtracurricularVisual } from "@/components/extracurricular/extracurricular-visual";
 
 const AUTOPLAY_MS = 6000;
 
@@ -132,11 +132,9 @@ export function EkskulSection() {
               >
                 <div className="overflow-hidden rounded-2xl border border-white/10 bg-brand-900/60 shadow-xl shadow-brand-950/40 backdrop-blur-sm">
                   <div className="relative aspect-[16/10] overflow-hidden">
-                    <ShimmerImage
-                      src={item.image}
-                      alt={item.name}
+                    <ExtracurricularVisual
+                      item={item}
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <span className="absolute inset-0 bg-gradient-to-t from-brand-950/85 via-brand-950/20 to-transparent" />
                     <span className="absolute bottom-3 left-4 inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-gold-400 ring-1 ring-inset ring-white/20 backdrop-blur-sm">

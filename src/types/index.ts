@@ -69,7 +69,7 @@ export interface Ekstrakurikuler {
   description: string;
   schedule: string;
   coach: string;
-  image: string;
+  image?: string;
 }
 
 export interface Facility {

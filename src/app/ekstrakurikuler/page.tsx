@@ -4,7 +4,7 @@ import { PageHeader } from "@/components/ui/page-header";
 import { Section, SectionHeading } from "@/components/ui/section-heading";
 import { Icon } from "@/components/ui/icon";
 import { ProgressRing } from "@/components/ui/progress-ring";
-import { ShimmerImage } from "@/components/ui/shimmer-image";
+import { ExtracurricularVisual } from "@/components/extracurricular/extracurricular-visual";
 
 export const metadata: Metadata = {
   title: "Ekstrakurikuler",
@@ -57,11 +57,9 @@ export default function EkstrakurikulerPage() {
               className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-surface transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-950/10"
             >
               <div className="relative aspect-[16/10] overflow-hidden">
-                <ShimmerImage
-                  src={item.image}
-                  alt={item.name}
+                <ExtracurricularVisual
+                  item={item}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
               <div className="flex flex-1 flex-col p-6">
