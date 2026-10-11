@@ -5,7 +5,7 @@ export const siteConfig = {
   tagline: "Unggul Berprestasi dan Berakhlak Mulia",
   description:
     "Website resmi UPTD SMP Negeri Satap 4 Barru, Dusun Banga-Banga, Desa Anabanua, Kabupaten Barru, Sulawesi Selatan. Mengimplementasikan Kurikulum Merdeka, keunggulan Imtaq dan Iptek, kemandirian, serta kearifan budaya lokal.",
-  url: "https://smpnsatap4barru.sch.id",
+  url: "https://smpnsatap4barru.my.id",
   npsn: "40314184",
   akreditasi: "B (Baik)",
   status: "Negeri",

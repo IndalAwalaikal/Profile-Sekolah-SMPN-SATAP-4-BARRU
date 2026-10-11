@@ -4,7 +4,7 @@
 
 Situs ini menyajikan informasi sekolah, kegiatan akademik, berita, agenda, galeri, PPDB, dan informasi kontak dalam antarmuka yang responsif dan dapat dipasang sebagai aplikasi web progresif (PWA).
 
-**Situs:** [smpnsatap4barru.sch.id](https://smpnsatap4barru.sch.id)
+**Situs:** [smpnsatap4barru.my.id](https://smpnsatap4barru.my.id)
 
 ## Navigasi
 
