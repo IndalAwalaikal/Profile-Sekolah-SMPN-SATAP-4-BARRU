@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   applicationName: siteConfig.name,
   icons: {
-    icon: "/icons/icon-192.png",
-    apple: "/icons/icon-192.png",
+    icon: "/icons/favicon-logo.png",
+    apple: "/icons/favicon-logo.png",
   },
   category: "education",
   creator: siteConfig.legalName,

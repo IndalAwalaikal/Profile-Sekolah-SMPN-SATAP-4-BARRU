@@ -4,6 +4,50 @@ export const newsCategories = ["Prestasi", "Akademik", "Kegiatan"] as const;
 
 export const news: NewsArticle[] = [
   {
+    slug: "peluncuran-website-sistem-informasi-sekolah-satap-4-barru",
+    title:
+      "Tim Lentera Anabanua KKN-PPL Terpadu Angkatan XXXIII UNM Resmi Luncurkan Website Sistem Informasi Sekolah UPTD SMPN Satap 4 Barru",
+    category: "Kegiatan",
+    excerpt:
+      "Tim Lentera Anabanua KKN-PPL Terpadu Angkatan XXXIII UNM meluncurkan website resmi UPTD SMPN Satap 4 Barru sebagai sarana informasi dan publikasi digital sekolah.",
+    content: [
+      "BARRU, 12 Oktober 2026 — Tim Lentera Anabanua Kuliah Kerja Nyata–Praktik Pengalaman Lapangan (KKN-PPL) Terpadu Angkatan XXXIII Universitas Negeri Makassar (UNM) resmi meluncurkan Website Sistem Informasi Sekolah UPTD SMPN Satap 4 Barru pada Senin (12/10/2026). Kegiatan berlangsung di ruang laboratorium komputer sekolah sebagai kontribusi mahasiswa dalam mendukung digitalisasi informasi pendidikan dan memperluas akses terhadap informasi sekolah.",
+      "Peluncuran dihadiri Pelaksana Tugas (Plt.) Kepala UPTD SMPN Satap 4 Barru, Nurinsyanah, S.Pd., jajaran guru dan staf sekolah, seluruh anggota Tim Lentera Anabanua KKN-PPL Terpadu Angkatan XXXIII UNM, serta perwakilan peserta didik. Kegiatan ini memperkenalkan inovasi digital yang dikembangkan mahasiswa untuk mendukung pengelolaan informasi dan publikasi sekolah.",
+      "Website diluncurkan secara resmi oleh Koordinator Sekolah Tim Lentera Anabanua, Indal Awalaikal. Masyarakat dapat mengaksesnya melalui alamat https://smpnsatap4barru.my.id. Website ini dikembangkan sebagai sarana informasi dan publikasi digital bagi warga sekolah maupun masyarakat luas.",
+      "Fitur yang tersedia meliputi profil sekolah, berita dan kegiatan, data guru, informasi peserta didik, galeri foto, serta informasi akademik. Informasi tersebut dihimpun dalam satu platform digital yang terstruktur agar masyarakat lebih mudah mengenal profil, aktivitas, dan perkembangan UPTD SMPN Satap 4 Barru.",
+      "Pengembangan website menjadi bagian dari program kerja Tim Lentera Anabanua KKN-PPL Terpadu Angkatan XXXIII UNM yang berfokus pada pemanfaatan teknologi informasi di lingkungan pendidikan. Melalui program ini, mahasiswa menghadirkan sarana untuk membantu penyebaran informasi, mendukung keterbukaan informasi sekolah, dan memperkenalkan identitas serta potensi sekolah kepada masyarakat.",
+    ],
+    inlineImage: {
+      src: "https://res.cloudinary.com/dmualsp81/image/upload/v1791782770/7ccbafbe-34a1-4c96-8437-6ae26c53a55a.png",
+      alt: "Tim Lentera Anabanua dan warga UPTD SMPN Satap 4 Barru dalam kegiatan peluncuran website sekolah",
+      caption:
+        "Tim Lentera Anabanua KKN-PPL Terpadu XXXIII UNM bersama warga UPTD SMPN Satap 4 Barru pada peluncuran website sekolah.",
+      afterParagraph: 2,
+    },
+    sections: [
+      {
+        heading: "Website Sekolah untuk Memperluas Akses Informasi",
+        paragraphs: [
+          "Koordinator Sekolah Tim Lentera Anabanua, Indal Awalaikal, menyampaikan bahwa pengembangan website merupakan bentuk penerapan ilmu dan keterampilan mahasiswa untuk menjawab kebutuhan sekolah di era digital. Website ini diharapkan membantu sekolah memublikasikan kegiatan, menyampaikan informasi akademik, dan memudahkan masyarakat mengakses informasi pendidikan.",
+          "Pemanfaatan platform digital menjadi salah satu langkah UPTD SMPN Satap 4 Barru dalam beradaptasi dengan perkembangan teknologi informasi, memperkuat publikasi sekolah, dan membangun komunikasi yang lebih terbuka dengan masyarakat.",
+        ],
+      },
+      {
+        heading: "Kolaborasi Mahasiswa dan Pihak Sekolah",
+        paragraphs: [
+          "Peluncuran ini juga mencerminkan sinergi antara mahasiswa dan pihak sekolah dalam mendorong inovasi pendidikan. Kolaborasi tersebut menjadi wujud peran mahasiswa dalam menerapkan pengetahuan yang diperoleh selama perkuliahan melalui pengabdian dan praktik langsung di satuan pendidikan.",
+          "Tim Lentera Anabanua KKN-PPL Terpadu Angkatan XXXIII UNM berharap sistem informasi ini dapat dimanfaatkan secara optimal dan dikelola secara berkelanjutan oleh pihak sekolah. Website smpnsatap4barru.my.id diharapkan berkembang menjadi pusat informasi digital yang mendukung keterbukaan informasi dan pengembangan identitas sekolah.",
+          "Peluncuran website menjadi langkah awal untuk memperkuat pemanfaatan teknologi informasi di UPTD SMPN Satap 4 Barru dan mendukung layanan informasi pendidikan yang modern, efektif, serta mudah diakses masyarakat.",
+        ],
+      },
+    ],
+    date: "2026-10-12",
+    author: "Humas Sekolah",
+    image:
+      "https://res.cloudinary.com/dmualsp81/image/upload/v1791782684/94a4562f-5d32-413f-9a56-f9daa450af8d.png",
+    tags: ["Peluncuran Website", "Digitalisasi Sekolah", "KKN-PPL", "UNM", "Sistem Informasi"],
+  },
+  {
     slug: "visitasi-akreditasi-smpn-satap-4-barru-2026",
     title:
       "SMPN Satap 4 Barru Jalani Visitasi Akreditasi, Perkuat Komitmen Tingkatkan Mutu Pendidikan",

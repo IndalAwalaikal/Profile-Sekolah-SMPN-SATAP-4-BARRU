@@ -7,6 +7,8 @@ export interface NewsArticle {
   excerpt: string;
   /** Paragraf isi artikel, sudah dipecah per paragraf. */
   content: string[];
+  /** Gambar opsional yang ditampilkan di dalam isi artikel setelah paragraf tertentu. */
+  inlineImage?: { src: string; alt: string; caption: string; afterParagraph: number };
   /** Bagian opsional dengan subjudul, untuk artikel yang memiliki struktur tematik. */
   sections?: { heading: string; paragraphs: string[] }[];
   /** Tanggal terbit dalam format ISO. */

@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { PageHeader } from "@/components/ui/page-header";
 import { Section } from "@/components/ui/section-heading";
 import { NewsCard } from "@/components/news/news-card";
+import { FeaturedNewsGrid } from "@/components/news/featured-news-grid";
 import { Icon } from "@/components/ui/icon";
 
 interface BeritaPageProps {
@@ -56,16 +57,16 @@ export default async function BeritaPage({ searchParams }: BeritaPageProps) {
             {articles.length} artikel
           </span>
         </nav>
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {articles[0] && (
-            <div className="sm:col-span-2">
-              <NewsCard article={articles[0]} variant="featured" />
-            </div>
-          )}
-          {articles.slice(1).map((article) => (
-            <NewsCard key={article.slug} article={article} variant="compact" />
-          ))}
+        <div className="mt-10">
+          <FeaturedNewsGrid articles={articles.slice(0, 4)} />
         </div>
+        {articles.length > 4 && (
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {articles.slice(4).map((article) => (
+              <NewsCard key={article.slug} article={article} />
+            ))}
+          </div>
+        )}
       </Section>
     </>
   );

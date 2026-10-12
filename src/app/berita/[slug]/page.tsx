@@ -48,12 +48,15 @@ export default async function BeritaDetailPage({ params }: BeritaDetailProps) {
   const article = getNewsBySlug(slug);
   if (!article) notFound();
   const related = getRelatedNews(slug);
+  const articleImageUrl = article.image.startsWith("http")
+    ? article.image
+    : `${siteConfig.url}${article.image}`;
   const articleStructuredData = {
     "@context": "https://schema.org",
     "@type": "NewsArticle",
     headline: article.title,
     description: article.excerpt,
-    image: [`${siteConfig.url}${article.image}`],
+    image: [articleImageUrl],
     datePublished: new Date(article.date).toISOString(),
     author: { "@type": "Person", name: article.author },
     publisher: {
@@ -144,16 +147,33 @@ export default async function BeritaDetailPage({ params }: BeritaDetailProps) {
             <article className="min-w-0">
               <div className="space-y-6 text-[16px] leading-[1.9] text-body sm:space-y-7 sm:text-[17px]">
                 {article.content.map((paragraph, index) => (
-                  <p
-                    key={`${index}-${paragraph.slice(0, 24)}`}
-                    className={
-                      index === 0
-                        ? "first-letter:float-left first-letter:mr-2 first-letter:mt-1 first-letter:font-serif first-letter:text-5xl first-letter:font-bold first-letter:leading-none first-letter:text-accent"
-                        : undefined
-                    }
-                  >
-                    {paragraph}
-                  </p>
+                  <div key={`${index}-${paragraph.slice(0, 24)}`}>
+                    <p
+                      className={
+                        index === 0
+                          ? "first-letter:float-left first-letter:mr-2 first-letter:mt-1 first-letter:font-serif first-letter:text-5xl first-letter:font-bold first-letter:leading-none first-letter:text-accent"
+                          : undefined
+                      }
+                    >
+                      {paragraph}
+                    </p>
+                    {article.inlineImage?.afterParagraph === index && (
+                      <figure className="my-9 overflow-hidden rounded-2xl border border-line bg-tint p-1.5 shadow-lg shadow-brand-950/10 sm:my-11 sm:rounded-3xl sm:p-2">
+                        <div className="relative aspect-[16/9] overflow-hidden rounded-xl bg-brand-950/5 sm:rounded-[1.25rem]">
+                          <Image
+                            src={article.inlineImage.src}
+                            alt={article.inlineImage.alt}
+                            fill
+                            sizes="(max-width: 1024px) 100vw, 768px"
+                            className="object-cover"
+                          />
+                        </div>
+                        <figcaption className="px-3 py-2.5 text-xs leading-relaxed text-muted sm:px-4">
+                          {article.inlineImage.caption}
+                        </figcaption>
+                      </figure>
+                    )}
+                  </div>
                 ))}
               </div>
 
