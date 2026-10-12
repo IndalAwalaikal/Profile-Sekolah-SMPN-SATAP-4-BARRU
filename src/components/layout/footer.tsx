@@ -72,7 +72,7 @@ export function Footer() {
               {siteConfig.phone ? (
                 <li className="flex gap-2.5">
                   <Icon name="phone" size={16} className="mt-0.5 shrink-0 text-brand-400" />
-                  <a href={`tel:${siteConfig.phone}`} className="hover:text-white">
+                  <a href={siteConfig.whatsappUrl} target="_blank" rel="noreferrer" className="hover:text-white">
                     {siteConfig.phone}
                   </a>
                 </li>

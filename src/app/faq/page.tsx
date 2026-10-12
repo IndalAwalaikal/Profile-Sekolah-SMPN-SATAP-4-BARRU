@@ -35,7 +35,7 @@ const faqGroups = [
     items: [
       {
         question: "Kurikulum apa yang digunakan sekolah?",
-        answer: "Sekolah menyelenggarakan Kurikulum Merdeka Fase D untuk kelas VII, VIII, dan IX. Informasi program pembelajaran tersedia di halaman Kurikulum.",
+        answer: "Sekolah menerapkan pendekatan Pembelajaran Mendalam (Deep Learning) pada Fase D untuk kelas VII, VIII, dan IX. Informasi program pembelajaran tersedia di halaman Kurikulum.",
         href: "/kurikulum",
         linkLabel: "Lihat Kurikulum & Pembelajaran",
       },

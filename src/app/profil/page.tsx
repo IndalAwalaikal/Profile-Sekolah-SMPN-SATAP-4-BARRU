@@ -361,7 +361,7 @@ export default function ProfilPage() {
         <SectionHeading
           eyebrow="Sejarah Singkat"
           title="Perjalanan Penyelenggaraan Pendidikan"
-          description="Dari awal pendirian hingga penetapan kurikulum merdeka terkini."
+          description="Dari awal pendirian hingga penerapan Kurikulum Pembelajaran Mendalam (Deep Learning)."
           align="center"
         />
         <ol className="relative mx-auto mt-14 max-w-3xl">

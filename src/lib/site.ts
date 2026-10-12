@@ -4,7 +4,7 @@ export const siteConfig = {
   legalName: "UPTD SMPN SATAP 4 BARRU",
   tagline: "Unggul Berprestasi dan Berakhlak Mulia",
   description:
-    "Website resmi UPTD SMP Negeri Satap 4 Barru, Dusun Banga-Banga, Desa Anabanua, Kabupaten Barru, Sulawesi Selatan. Mengimplementasikan Kurikulum Merdeka, keunggulan Imtaq dan Iptek, kemandirian, serta kearifan budaya lokal.",
+    "Website resmi UPTD SMP Negeri Satap 4 Barru, Dusun Banga-Banga, Desa Anabanua, Kabupaten Barru, Sulawesi Selatan. Menerapkan pendekatan Kurikulum Pembelajaran Mendalam (Deep Learning), keunggulan Imtaq dan Iptek, kemandirian, serta kearifan budaya lokal.",
   url: "https://smpnsatap4barru.my.id",
   npsn: "40314184",
   akreditasi: "B (Baik)",
@@ -17,7 +17,8 @@ export const siteConfig = {
   tmtSkOperasional: "2 Juli 2008",
   address:
     "Jl. Pahlawan Dusun Banga-Banga, Desa Anabanua, Kec. Barru, Kab. Barru, Prov. Sulawesi Selatan 90712",
-  phone: "",
+  phone: "+62 851-2245-8079",
+  whatsappUrl: "https://wa.me/6285122458079",
   email: "barru.brru.smpn4satapbarru@gmail.com",
   officeHours: "Senin – Sabtu, 07.30 – 14.00 WITA",
   mapsUrl: "https://www.google.com/maps?q=Anabanua+Barru",

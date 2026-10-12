@@ -12,11 +12,11 @@ export function CurriculumPreview() {
         <div className="lg:col-span-7">
           <SectionHeading
             eyebrow="Kurikulum & Pembelajaran"
-            title="Kurikulum Merdeka Berbasis Karakter & Teknologi"
+            title="Pembelajaran Mendalam Berbasis Karakter & Teknologi"
             description="Disesuaikan dengan potensi alam pegunungan dan kearifan masyarakat Dusun Banga-banga Desa Anabanua."
           />
           <p className="mt-5 text-[15px] leading-relaxed text-muted sm:text-base">
-            UPTD SMPN SATAP 4 BARRU menyelenggarakan Kurikulum Merdeka Fase D (Kelas 7, 8, dan 9)
+            UPTD SMPN SATAP 4 BARRU menerapkan pendekatan Pembelajaran Mendalam (Deep Learning) pada Fase D (Kelas 7, 8, dan 9)
             yang mengedepankan pembelajaran berdiferensiasi, laboratorium komputer, kepramukaan wajib,
             serta pembiasaan religius Baca Tulis Al-Qur&apos;an (BTQ) dan shalat berjamaah.
           </p>

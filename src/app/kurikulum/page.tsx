@@ -88,25 +88,25 @@ const pilarPembelajaran = [
     ],
   },
   {
-    title: "Pembelajaran Berbasis Projek (PBL)",
+    title: "Pembelajaran Berbasis Proyek",
     badge: "Solutif & Nyata",
     description:
-      "Peserta didik dilatih menyelesaikan masalah nyata di lingkungan sekitar sekolah: pengolahan sampah organik, kreasi pangan lokal, hingga pembuatan hasta karya.",
+      "Peserta didik belajar menyelesaikan masalah nyata di lingkungan sekolah melalui proyek seperti pengolahan sampah organik, kreasi pangan lokal, dan pembuatan hasta karya.",
     points: [
       "Mengangkat permasalahan nyata lingkungan Banga-banga",
       "Kolaborasi tim lintas mata pelajaran",
-      "Pameran karya dan gelar karya projek peserta didik",
+      "Pameran karya dan gelar proyek peserta didik",
     ],
   },
   {
-    title: "Projek Penguatan Profil Pelajar Pancasila (P5)",
-    badge: "Kokurikuler 20-30%",
+    title: "Kokurikuler Berbasis Proyek",
+    badge: "Kontekstual & Kolaboratif",
     description:
-      "Kegiatan kokurikuler yang dirancang terpisah dari intrakurikuler untuk memperkuat karakter luhur Pancasila melalui tema kontekstual seperti kearifan lokal dan gaya hidup berkelanjutan.",
+      "Kegiatan kokurikuler dilaksanakan melalui proyek kontekstual yang menghubungkan pembelajaran dengan kehidupan nyata, seperti kearifan lokal dan gaya hidup berkelanjutan.",
     points: [
-      "Alokasi waktu fleksibel 20%–30% dari total jam pelajaran reguler",
-      "Tema Kearifan Lokal: Melestarikan tradisi Bugis Banga-banga",
-      "Tema Gaya Hidup Berkelanjutan: Pengelolaan sampah & penghijauan",
+      "Proyek kearifan lokal untuk melestarikan tradisi Bugis Banga-banga",
+      "Proyek gaya hidup berkelanjutan melalui pengelolaan sampah dan penghijauan",
+      "Kolaborasi lintas mata pelajaran dan presentasi hasil karya",
     ],
   },
 ];
@@ -147,19 +147,19 @@ export default function KurikulumPage() {
         crumbs={[{ label: "Beranda", href: "/" }, { label: "Kurikulum & Pembelajaran" }]}
       />
 
-      {/* Rangkuman Kurikulum Merdeka Fase D */}
+      {/* Rangkuman Kurikulum Pembelajaran Mendalam Fase D */}
       <Section>
         <div className="grid items-center gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <SectionHeading
               eyebrow="Kerangka Pendidikan"
-              title="Implementasi Kurikulum Merdeka Fase D"
+              title="Kurikulum Pembelajaran Mendalam (Deep Learning) Fase D"
               description="Kurikulum operasional yang diselaraskan dengan potensi lokal, kondisi peserta didik, dan kearifan masyarakat Banga-banga Desa Anabanua."
             />
             <p className="mt-5 text-[15px] leading-relaxed text-muted sm:text-base">
-              UPTD SMPN SATAP 4 BARRU menerapkan Kurikulum Merdeka pada jenjang <strong>Fase D
+              UPTD SMPN SATAP 4 BARRU menerapkan pendekatan Kurikulum Pembelajaran Mendalam (Deep Learning) pada jenjang <strong>Fase D
               (Kelas VII, VIII, dan IX)</strong>.
-              Kurikulum ini dirancang berakar pada filosofi merdeka belajar: mengutamakan pemahaman mendalam,
+              Pendekatan ini mengutamakan pemahaman mendalam,
               pengembangan karakter, serta kecakapan praktis (life skills) peserta didik.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
@@ -183,8 +183,8 @@ export default function KurikulumPage() {
                   <span className="font-bold text-heading">Fase D (Kelas 7, 8, 9)</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="font-semibold text-muted">Alokasi P5 Kokurikuler</span>
-                  <span className="font-bold text-heading">20% – 30% Jam Pelajaran</span>
+                  <span className="font-semibold text-muted">Kegiatan Kokurikuler</span>
+                  <span className="font-bold text-heading">Berbasis Proyek</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="font-semibold text-muted">Pendekatan Belajar</span>
@@ -227,7 +227,7 @@ export default function KurikulumPage() {
         </div>
       </Section>
 
-      {/* Pilar Pembelajaran Berdiferensiasi & Berbasis Projek */}
+      {/* Pilar Pembelajaran Berdiferensiasi & Berbasis Proyek */}
       <Section>
         <SectionHeading
           eyebrow="Strategi Pembelajaran"

@@ -11,7 +11,7 @@ const categoryColors: Record<string, string> = {
   Akademik: "bg-brand-600",
   Prestasi: "bg-gold-500",
   Kegiatan: "bg-emerald-500",
-  P5: "bg-rose-500",
+  Proyek: "bg-rose-500",
   Kesiswaan: "bg-violet-500",
 };
 

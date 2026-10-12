@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const contactItems = [
   { icon: "map-pin" as const, label: "Alamat Sekolah", value: siteConfig.address },
   ...(siteConfig.phone
-    ? [{ icon: "phone" as const, label: "Telepon / WhatsApp", value: siteConfig.phone, href: `tel:${siteConfig.phone}` }]
+    ? [{ icon: "phone" as const, label: "WhatsApp", value: siteConfig.phone, href: siteConfig.whatsappUrl }]
     : []),
   { icon: "mail" as const, label: "Email Resmi", value: siteConfig.email, href: `mailto:${siteConfig.email}` },
   { icon: "clock" as const, label: "Jam Layanan", value: siteConfig.officeHours },
@@ -54,6 +54,8 @@ export default function KontakPage() {
                     {item.href ? (
                       <a
                         href={item.href}
+                        target={item.label === "WhatsApp" ? "_blank" : undefined}
+                        rel={item.label === "WhatsApp" ? "noreferrer" : undefined}
                         className="mt-1 block break-words text-[15px] font-semibold text-heading transition-colors hover:text-accent"
                       >
                         {item.value}

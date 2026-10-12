@@ -27,6 +27,10 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
+  icons: {
+    icon: "/icons/icon-192.png",
+    apple: "/icons/icon-192.png",
+  },
   category: "education",
   creator: siteConfig.legalName,
   publisher: siteConfig.legalName,

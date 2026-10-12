@@ -6,7 +6,7 @@ import { Section } from "@/components/ui/section-heading";
 export const metadata: Metadata = {
   title: "Agenda Kegiatan",
   description:
-    "Kalender akademik interaktif SMP Negeri Satu Atap 4 Barru — kegiatan akademik, kesiswaan, P5, dan prestasi sepanjang tahun ajaran.",
+    "Kalender akademik interaktif SMP Negeri Satu Atap 4 Barru — kegiatan akademik, kesiswaan, proyek kokurikuler, dan prestasi sepanjang tahun ajaran.",
 };
 
 export default function AgendaPage() {

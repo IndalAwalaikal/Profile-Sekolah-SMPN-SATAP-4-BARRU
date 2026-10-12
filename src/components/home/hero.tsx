@@ -14,12 +14,12 @@ const heroSlides: HeroSlide[] = [
   },
   {
     src: "https://res.cloudinary.com/dmualsp81/image/upload/v1790949844/0e5ad297-978f-4998-a026-29b0a1c5bb2c.png",
-    eyebrow: "Kurikulum Merdeka Fase D",
+    eyebrow: "Pembelajaran Mendalam (Deep Learning) · Fase D",
     title: "Pembelajaran Berbasis",
-    highlight: "Teknologi & Projek",
+    highlight: "Teknologi & Proyek",
     titleAfter: "Bermakna",
     description:
-      "Mengintegrasikan pembelajaran berdiferensiasi, laboratorium komputer, kepramukaan wajib, dan Projek Penguatan Profil Pelajar Pancasila (P5) berbasis kearifan lokal Bugis.",
+      "Mengintegrasikan pembelajaran berdiferensiasi, laboratorium komputer, kepramukaan wajib, dan kegiatan kokurikuler berbasis proyek dengan kearifan lokal Bugis.",
     primaryCta: { label: "Program Unggulan", href: "/kurikulum#program-unggulan" },
     secondaryCta: { label: "Ekstrakurikuler", href: "/ekstrakurikuler" },
   },

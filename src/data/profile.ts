@@ -70,9 +70,9 @@ export const schoolValues = [
       "Penguatan imtaq melalui kegiatan keagamaan intensif, pembiasaan BTQ, shalat berjamaah, dan pembiasaan budaya 5S.",
   },
   {
-    title: "Unggul Iptek & Projek",
+    title: "Unggul Iptek & Proyek",
     description:
-      "Pembelajaran berbasis teknologi dan pembelajaran berbasis projek yang menumbuhkan daya nalar kritis dan kreativitas siswa.",
+      "Pembelajaran berbasis teknologi dan pembelajaran berbasis proyek yang menumbuhkan daya nalar kritis dan kreativitas siswa.",
   },
   {
     title: "Mandiri & Berwawasan Global",
@@ -96,9 +96,9 @@ export const historyTimeline: TimelineEntry[] = [
   },
   {
     year: "2022",
-    title: "Implementasi Kurikulum Merdeka",
+    title: "Penerapan Pembelajaran Mendalam (Deep Learning)",
     description:
-      "Memulai adopsi Kurikulum Merdeka Fase D, mengedepankan pembelajaran berdiferensiasi dan Projek Penguatan Profil Pelajar Pancasila (P5).",
+      "Mengembangkan pembelajaran mendalam pada Fase D, mengedepankan pembelajaran berdiferensiasi dan penguatan karakter peserta didik.",
   },
   {
     year: "2025/2026",
@@ -134,9 +134,9 @@ export const visiMisi = {
         "Memiliki karakter dan unggul dalam bidang teknologi informasi dan komunikasi melalui pembelajaran berbasis teknologi.",
     },
     {
-      title: "Pembelajaran Berbasis Projek",
+      title: "Pembelajaran Berbasis Proyek",
       description:
-        "Mewujudkan kreativitas dan kemandirian melalui pembelajaran berbasis projek yang kontekstual dan berdampak nyata.",
+        "Mewujudkan kreativitas dan kemandirian melalui pembelajaran berbasis proyek yang kontekstual dan berdampak nyata.",
     },
     {
       title: "Sekolah Bersih, Hijau, dan Ramah Lingkungan",
@@ -178,7 +178,7 @@ export const visiMisi = {
       no: 5,
       title: "Kemandirian dan Pemecahan Masalah",
       description:
-        "Peserta didik mampu meningkatkan kreativitas dan kemandirian siswa dalam penyelesaian masalah di sekitar kehidupan sehari-hari melalui program pembelajaran berbasis projek.",
+        "Peserta didik mampu meningkatkan kreativitas dan kemandirian siswa dalam penyelesaian masalah di sekitar kehidupan sehari-hari melalui program pembelajaran berbasis proyek.",
     },
     {
       no: 6,
@@ -200,7 +200,7 @@ export const schoolKarakteristik = {
   gambaranUmum: {
     title: "Gambaran Umum Satuan Pendidikan",
     description:
-      "UPTD SMPN SATAP 4 BARRU menyelenggarakan pendidikan berkualitas berbasis Kurikulum Merdeka yang disesuaikan dengan kekhasan, kondisi, dan potensi daerah Dusun Banga-banga Desa Anabanua. Sekolah mengutamakan pemahaman materi, keterampilan (skill), serta pendidikan berkarakter yang mengantarkan peserta didik memiliki delapan dimensi profil lulusan abad ke-21.",
+      "UPTD SMPN SATAP 4 BARRU menyelenggarakan pendidikan berkualitas dengan pendekatan Kurikulum Pembelajaran Mendalam (Deep Learning) yang disesuaikan dengan kekhasan, kondisi, dan potensi daerah Dusun Banga-banga Desa Anabanua. Sekolah mengutamakan pemahaman materi, keterampilan (skill), serta pendidikan berkarakter yang mengantarkan peserta didik memiliki delapan dimensi profil lulusan abad ke-21.",
   },
   lingkungan: {
     title: "Kondisi Lingkungan Sekolah",
@@ -236,7 +236,7 @@ export const schoolKarakteristik = {
   keunikanBangaBanga: {
     title: "Keunikan Sekolah & Budaya Banga-banga",
     description:
-      "Banga-banga di Desa Anabanua memiliki kekayaan budaya daerah yang sangat khas. Keunikan ini menjadi basis kurikulum lokal sekolah dengan mengintegrasikan permainan tradisional, upacara adat, serta makanan khas daerah ke dalam pembelajaran kokurikuler dan P5. Sekolah memadukan kearifan lokal Bugis dengan wawasan pendidikan global.",
+      "Banga-banga di Desa Anabanua memiliki kekayaan budaya daerah yang sangat khas. Keunikan ini menjadi basis kurikulum lokal sekolah dengan mengintegrasikan permainan tradisional, upacara adat, serta makanan khas daerah ke dalam kegiatan kokurikuler berbasis proyek. Sekolah memadukan kearifan lokal Bugis dengan wawasan pendidikan global.",
     points: [
       "Pelestarian permainan anak tradisional Bugis yang melatih sportivitas",
       "Penghayatan upacara adat dan etika kearifan lokal siri' na pacce",
@@ -264,7 +264,7 @@ export const budayaLokal = [
     title: "Makanan Khas & Pangan Lokal",
     icon: "star",
     description:
-      "Pengenalan dan kreasi kuliner tradisional Bugis seperti barongko, doko-doko, putu cangkiri, dan pengolahan hasil tani lokal yang diintegrasikan dalam tema kewirausahaan P5.",
+      "Pengenalan dan kreasi kuliner tradisional Bugis seperti barongko, doko-doko, putu cangkiri, dan pengolahan hasil tani lokal melalui proyek kewirausahaan.",
   },
   {
     title: "Harmonisasi Tradisi & Wawasan Global",
@@ -310,7 +310,7 @@ export const programUnggulan = [
   },
   {
     no: "02",
-    title: "Pembelajaran Berbasis Projek (PBL & P5)",
+    title: "Pembelajaran dan Kokurikuler Berbasis Proyek",
     category: "Kreativitas & Kemandirian",
     description:
       "Mendorong peserta didik memecahkan masalah nyata di sekitar lingkungan Banga-banga melalui proyek karya tulis sederhana, pengolahan pangan lokal, pengolahan sampah, dan pemanfaatan lahan sekolah.",
@@ -389,7 +389,7 @@ export const teachers: Teacher[] = [
     name: "Esra, S.Pd.",
     role: "Ur. Kurikulum · Ketua TPK",
     group: "waka",
-    subjects: ["Kurikulum Merdeka", "Matematika / IPA"],
+    subjects: ["Pembelajaran Mendalam", "Matematika / IPA"],
     hours: "Manajerial Kurikulum & Pembelajaran",
   },
   {
@@ -418,7 +418,7 @@ export const teachers: Teacher[] = [
     role: "Guru Seni Budaya",
     group: "guru",
     subjects: ["Seni Budaya", "Seni Tari Bugis"],
-    hours: "Pembinaan Tari Tradisional & P5 Seni",
+    hours: "Pembinaan Tari Tradisional & Proyek Seni",
   },
   {
     name: "Supriadi, S.Pd.",
@@ -473,7 +473,7 @@ export const teachers: Teacher[] = [
 export const schoolStats = [
   { value: String(publishedSchoolSnapshot.studentCount), label: "Peserta Didik", hint: `Data TP ${publishedSchoolSnapshot.year}` },
   { value: String(teachers.length), label: "Guru & Tendik", hint: `Data TP ${publishedSchoolSnapshot.year}` },
-  { value: String(publishedSchoolSnapshot.rombelCount), label: "Rombel Fase D", hint: "Kelas VII, VIII, dan IX (Kurikulum Merdeka)" },
+  { value: String(publishedSchoolSnapshot.rombelCount), label: "Rombel Fase D", hint: "Kelas VII, VIII, dan IX (Pembelajaran Mendalam)" },
   { value: siteConfig.akreditasi.split(" ")[0], label: "Akreditasi", hint: siteConfig.akreditasi },
 ] as const;
 
@@ -513,7 +513,7 @@ export const facilities = [
     image:
       "https://res.cloudinary.com/dmualsp81/image/upload/v1791293066/745bdaae-e677-443d-869b-749ffd4927ab.png",
     details: [
-      "Meja praktikum dan alat peraga kurikulum merdeka",
+      "Meja praktikum dan alat peraga pembelajaran mendalam",
       "Peralatan mikroskop dan kit percobaan sains dasar",
       "Praktikum terpadu fenomena alam sekitar Banga-banga",
     ],
@@ -522,7 +522,7 @@ export const facilities = [
     name: "Perpustakaan Sekolah",
     slug: "perpustakaan",
     description:
-      "Pusat sumber belajar dengan koleksi buku teks pelajaran Kurikulum Merdeka, buku pengayaan, ensiklopedia, dan pojok baca harian 15 menit untuk memacu literasi membaca.",
+      "Pusat sumber belajar dengan koleksi buku teks pelajaran, buku pengayaan, ensiklopedia, dan pojok baca harian 15 menit untuk memacu literasi membaca.",
     image:
       "https://res.cloudinary.com/dmualsp81/image/upload/v1791293487/ebe97e33-f269-4ca3-adeb-4437053d62bf.png",
     details: [
@@ -548,7 +548,7 @@ export const facilities = [
     name: "Lingkungan Alam Sumber Belajar",
     slug: "lingkungan-alam",
     description:
-      "Keasrian alam persawahan dan perbukitan sekitar Dusun Banga-banga yang dimanfaatkan guru sebagai laboratorium alam terbuka untuk pengamatan ekosistem, pertanian, dan proyek gaya hidup berkelanjutan P5.",
+      "Keasrian alam persawahan dan perbukitan sekitar Dusun Banga-banga dimanfaatkan guru sebagai laboratorium alam terbuka untuk proyek pengamatan ekosistem, pertanian, dan gaya hidup berkelanjutan.",
     image:
       "https://res.cloudinary.com/dmualsp81/image/upload/v1791293611/8c8c6385-dc5e-4896-9b7a-350c592e9877.png",
     details: [

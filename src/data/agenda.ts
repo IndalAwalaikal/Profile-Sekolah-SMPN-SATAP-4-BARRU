@@ -33,9 +33,9 @@ export const agendaItems: AgendaItem[] = [
     date: "2026-11-05",
     time: "09.00 – 14.00 WITA",
     location: "Greenhouse sekolah",
-    category: "P5",
+    category: "Proyek",
     description:
-      "Proyek penguatan profil pelajar Pancasila tema gaya hidup berkelanjutan bersama praktisi hidroponik Barru.",
+      "Kegiatan kokurikuler berbasis proyek dengan tema gaya hidup berkelanjutan bersama praktisi hidroponik Barru.",
   },
   {
     title: "Class Meeting dan Pentas Seni",

@@ -53,7 +53,7 @@ export const ekstrakurikuler: Ekstrakurikuler[] = [
     coach: "Rustiah, S.Pd.",
   },
   {
-    name: "Pengembangan Minat & Bakat Projek",
+    name: "Pengembangan Minat & Bakat Proyek",
     slug: "minat-bakat",
     description:
       "Ruang kreasi peserta didik untuk mengembangkan proyek mandiri seperti penulisan mading, karya sastra cerita/puisi, pembuatan hasta karya daur ulang sampah, dan kreasi olahan pangan lokal.",

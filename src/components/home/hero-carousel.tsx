@@ -152,7 +152,7 @@ export function HeroCarousel({
           {[
             { icon: "star" as const, label: `Akreditasi ${siteConfig.akreditasi}` },
             { icon: "graduation-cap" as const, label: `NPSN ${siteConfig.npsn}` },
-            { icon: "book-open" as const, label: "Kurikulum Merdeka" },
+            { icon: "book-open" as const, label: "Pembelajaran Mendalam" },
           ].map((item) => (
             <div key={item.label} className="flex items-center gap-2.5">
               <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-gold-400 ring-1 ring-inset ring-white/20">
