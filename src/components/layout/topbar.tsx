@@ -37,7 +37,7 @@ export function Topbar() {
                 aria-label={social.name}
                 className="text-brand-200 transition-colors hover:text-gold-400"
               >
-                <Icon name={social.icon as "facebook"} size={15} />
+                <Icon name={social.icon} size={15} />
               </a>
             ))}
           </div>

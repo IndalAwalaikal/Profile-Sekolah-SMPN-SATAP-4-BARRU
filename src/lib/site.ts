@@ -24,7 +24,9 @@ export const siteConfig = {
   mapsUrl: "https://www.google.com/maps?q=Anabanua+Barru",
   mapsEmbed:
     "https://maps.google.com/maps?q=Anabanua%20Barru%20Sulawesi%20Selatan&t=&z=12&ie=UTF8&iwloc=&output=embed",
-  socials: [] as { name: string; href: string; icon: string }[],
+  socials: [
+    { name: "Instagram", href: "https://www.instagram.com/spembar.4/", icon: "instagram" },
+  ] as { name: string; href: string; icon: "facebook" | "instagram" | "youtube" }[],
 } as const;
 
 export type SiteConfig = typeof siteConfig;

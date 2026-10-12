@@ -77,7 +77,7 @@ export default function KontakPage() {
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 rounded-full bg-brand-950 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-brand-800"
                 >
-                  <Icon name={social.icon as "facebook"} size={15} />
+                  <Icon name={social.icon} size={15} />
                   {social.name}
                 </a>
               ))}
