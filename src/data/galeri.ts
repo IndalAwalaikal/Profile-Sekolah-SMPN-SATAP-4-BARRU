@@ -32,6 +32,19 @@ export const galleryAlbums: GalleryAlbum[] = [
     ],
   },
   {
+    slug: "kkn-ppl-unm-angkatan-xxxiii",
+    title: "KKN-PPL UNM Angk. XXXIII",
+    description:
+      "Dokumentasi kegiatan mahasiswa KKN-PPL Universitas Negeri Makassar Angkatan XXXIII di UPTD SMPN Satap 4 Barru.",
+    category: "KKN-PPL",
+    cover: "/images/galeri-kegiatan/KKN-PPL/1.webp",
+    photos: [
+      { src: "/images/galeri-kegiatan/KKN-PPL/1.webp", caption: "Kegiatan KKN-PPL UNM Angkatan XXXIII di lingkungan sekolah." },
+      { src: "/images/galeri-kegiatan/KKN-PPL/2.webp", caption: "Mahasiswa KKN-PPL UNM Angkatan XXXIII bersama warga sekolah." },
+      { src: "/images/galeri-kegiatan/KKN-PPL/3.webp", caption: "Dokumentasi kebersamaan dalam kegiatan KKN-PPL." },
+    ],
+  },
+  {
     slug: "kegiatan-pembelajaran",
     title: "Kegiatan Pembelajaran",
     description:
@@ -51,6 +64,7 @@ export const galleryCategories = [
   "Semua",
   "Akreditasi",
   "Literasi",
+  "KKN-PPL",
   "Pembelajaran",
 ] as const;
 

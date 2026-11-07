@@ -5,7 +5,7 @@ export const tenagaPendidik = [
   { no: 3, nama: "Nurinsyanah, S.Pd.", jabatan: "Guru Ahli Madya", bidang: "IPS" },
   { no: 4, nama: "Andi Nu'manah, S.Pd.", jabatan: "Guru Ahli Madya", bidang: "IPA" },
   { no: 5, nama: "Esra, S.Pd.", jabatan: "Guru Muda", bidang: "PPKn" },
-  { no: 6, nama: "Riri Anggraini, S.Pd.", jabatan: "Guru Ahli Pertama", bidang: "Seni Budaya" },
+  { no: 6, nama: "Riri Anggrainy, S.Pd.", jabatan: "Guru Ahli Pertama", bidang: "Seni Budaya" },
   { no: 7, nama: "Supriadi, S.Pd.", jabatan: "Guru Ahli Pertama", bidang: "Bahasa Indonesia" },
   { no: 8, nama: "A. Fuad Renaldi Parisseng, S.Or.", jabatan: "Guru Ahli Pertama", bidang: "Pendidikan Jasmani" },
   { no: 9, nama: "Rachmawati, S.P.", jabatan: "Guru Ahli Pertama", bidang: "Bahasa Daerah / Prakarya" },
